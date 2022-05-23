@@ -30,4 +30,12 @@ class HomeController extends Controller
     {
         return view('superadminhome');
     }
+    public function adminindex()
+    {
+        return view('adminhome');
+    }
+    public function teacherindex()
+    {
+        return view('teacherhome');
+    }
 }

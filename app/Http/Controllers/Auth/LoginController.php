@@ -59,6 +59,15 @@ class LoginController extends Controller
             return redirect()->route('superadmin.home');
         }
 
+
+        elseif(auth()->user()->role == 'admin'){
+            return redirect()->route('admin.home');
+        }
+
+        elseif(auth()->user()->role == 'teacher'){
+            return redirect()->route('teacher.home');
+        }
+
          /* User Status Check and View User Dashboard */
          
         else{
