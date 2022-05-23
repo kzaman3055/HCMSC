@@ -24,6 +24,18 @@ return $next($request);
 
 
 }
+elseif (auth()->user()->role=='admin')
+{
+return $next($request);
+
+
+}
+elseif (auth()->user()->role=='teacher')
+{
+return $next($request);
+
+
+}
 
 return redirect('home')->with('error',"No access to Super Admin");
 
