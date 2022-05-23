@@ -132,10 +132,6 @@ $route = Route::current()->getName();
           </a>
           <ul class="treeview-menu">
             <li><a href="utilities_border.html"><i class="ti-more"></i>Border</a></li>
-            <li><a href="utilities_color.html"><i class="ti-more"></i>Color</a></li>
-            <li><a href="utilities_ribbons.html"><i class="ti-more"></i>Ribbons</a></li>
-            <li><a href="utilities_tab.html"><i class="ti-more"></i>Tabs</a></li>
-            <li><a href="utilities_animations.html"><i class="ti-more"></i>Animation</a></li>
           </ul>
         </li>
  </section>
