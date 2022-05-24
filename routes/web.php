@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
 
+use App\Http\Controllers\SuperAdmin\ClassController;
 
 
 
@@ -50,13 +51,40 @@ Route::get('/teacher/home', [App\Http\Controllers\HomeController::class, 'teache
 
 // SuperAdmin management all route
 Route::prefix('superadmin')->group(function(){
-    Route::get('/logout', [SuperAdminController::class, 'Logout'])->name('superadmin.logout');
+    Route::get('/logout', [ClassController::class, 'Logout'])->name('superadmin.logout');
 
 
 
 
 
 });
+
+
+
+
+Route::prefix('class')->group(function(){
+    Route::get('/view', [ClassController::class, 'ClassView'])->name('class.view');
+    Route::post('/store', [ClassController::class, 'ClassStore'])->name('class.store');
+
+    Route::get('/edit/{id}', [ClassController::class, 'ClassEdit'])->name('class.edit');
+    Route::post ('/update/{id}', [ClassController::class, 'ClassUpdate'])->name('class.update');
+    Route::get('/delete/{id}', [ClassController::class, 'ClassDelete'])->name('class.delete');
+
+
+});
+
+
+
+// common route beteen Super admin and admin
+
+/// Student Registration Routes  
+
+
+
+
+
+
+
 
 
 
