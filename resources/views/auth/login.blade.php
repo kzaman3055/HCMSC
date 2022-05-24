@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="title"><span>Login Form</span></div>
+        <div class="title"><span>HCMSC Login</span></div>
 
 
         @if (isset(Auth::user()->email))
