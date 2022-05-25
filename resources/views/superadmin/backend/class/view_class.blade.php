@@ -126,6 +126,12 @@
 
 <td>
 
+
+
+{{-- modal start --}}
+
+
+
   <div id="editClassModal" vid="{{$student_classes->id}}" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -158,6 +164,8 @@
 
 </tr>
 
+
+{{-- modal end --}}
 
                           @endforeach
 
@@ -206,25 +214,7 @@
 
 
 
-{{-- modal pop up --}}
 
-   
-
-
-
-{{-- modal popup end --}}
-
-
-{{-- modal script start --}}
-
-
-
-
-
-
-
-
-{{-- modal script end --}}
 
 
 
