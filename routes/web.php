@@ -66,13 +66,13 @@ Route::prefix('class')->group(function(){
     Route::get('/view', [ClassController::class, 'ClassView'])->name('class.view');
     Route::post('/store', [ClassController::class, 'ClassStore'])->name('class.store');
 
-    Route::get('/edit/{id}', [ClassController::class, 'ClassEdit'])->name('class.edit');
-    Route::post ('/update/{id}', [ClassController::class, 'ClassUpdate'])->name('class.update');
     Route::get('/delete/{id}', [ClassController::class, 'ClassDelete'])->name('class.delete');
 
 
 });
 
+Route::get('classes/{id}/edit', [ClassController::class, 'edit'])->name('class_edit');
+Route::post('classes', [ClassController::class, 'update'])->name('class_update');
 
 
 // common route beteen Super admin and admin
