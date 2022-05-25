@@ -4,7 +4,7 @@
 
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
 
-use App\Http\Controllers\SuperAdmin\ClassController;
+use App\Http\Controllers\SuperAdmin\ClassController1;
 
 
 
@@ -51,7 +51,7 @@ Route::get('/teacher/home', [App\Http\Controllers\HomeController::class, 'teache
 
 // SuperAdmin management all route
 Route::prefix('superadmin')->group(function(){
-    Route::get('/logout', [ClassController::class, 'Logout'])->name('superadmin.logout');
+    Route::get('/logout', [SuperAdminController::class, 'Logout'])->name('superadmin.logout');
 
 
 
@@ -63,16 +63,15 @@ Route::prefix('superadmin')->group(function(){
 
 
 Route::prefix('class')->group(function(){
-    Route::get('/view', [ClassController::class, 'ClassView'])->name('class.view');
-    Route::post('/store', [ClassController::class, 'ClassStore'])->name('class.store');
+    // Route::get('/view', [Class1Controller1::class, 'ClassView'])->name('class.view');
+    // Route::post('/store', [Class1Controller1::class, 'ClassStore'])->name('class.store');
+    // // Route::put('/class-update/{id}', [Class1Controller1::class, 'ClassUpdate'])->name('class-update');
+    // // Route::get('/delete/{id}', [Class1Controller1::class, 'ClassDelete'])->name('class.delete');
 
-    Route::get('/delete/{id}', [ClassController::class, 'ClassDelete'])->name('class.delete');
-
+    Route::resource('manage-class', 'App\Http\Controllers\ClassController');
 
 });
 
-Route::get('classes/{id}/edit', [ClassController::class, 'edit'])->name('class_edit');
-Route::post('classes', [ClassController::class, 'update'])->name('class_update');
 
 
 // common route beteen Super admin and admin
