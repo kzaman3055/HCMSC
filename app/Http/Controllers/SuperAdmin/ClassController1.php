@@ -85,7 +85,7 @@ class ClassController extends Controller
             
             
             
-            return redirect()->route('destination.view')->with($notification);
+            return redirect()->route('class.view')->with($notification);
         
         
         

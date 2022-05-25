@@ -45,7 +45,7 @@
                     <div class="box-body">
                       <div class="row">
                         <div class="col">
-                            <form method='POST' action="{{route('class.store')}}" >
+                            <form method='POST' action="{{route('manage-class.store')}}" >
                                 @csrf
 
 
@@ -109,15 +109,34 @@
                                 <a href="{{route('class.delete',$student_classes->id)}}" class="btn btn-danger btn-flat mb-5" id="delete">Delete</a> --}}
 
 
+                                <a href="#editClassModal_{{$student_classes->id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 
 
+                                <div id="editClassModal_{{$student_classes->id}}"  class="modal fade">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      {!! Form::open(array('route' =>['manage-class.update', $student_classes->id],'method'=>'PUT')) !!}                                        
 
-
-
-                                <a href="#editClassModal" class="edit edit_class" vid='{{$student_classes->id}}' data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-
-
-                          
+                                        <div class="modal-header">						
+                                          <h4 class="modal-title">Edit Class</h4>
+                                        </div>
+                                        <div class="modal-body">	
+                                          <input type="text" hidden name="class_id" id="class_id" class="form-control" required>
+                              
+                                          <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" name='name' id='name' value="{{$student_classes->name}}" class="form-control" required>
+                                          </div>
+                                                
+                                        </div>
+                                        <div class="modal-footer">
+                                          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                          <button type="submit" class="btn btn-primary mx-auto">Update</button>
+                                        </div>
+                                        {!! Form::close() !!}
+                                      </div>
+                                  </div>
+                                </div>
 
 
                             </td>
@@ -125,39 +144,6 @@
 
 
 <td>
-
-
-
-{{-- modal start --}}
-
-
-
-  <div id="editClassModal" vid="{{$student_classes->id}}" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="{{route('class_update')}}" method="POST" enctype="multipart/form-data">
-          @csrf
-          @method('PUT')
-          <div class="modal-header">						
-            <h4 class="modal-title">Edit Class</h4>
-          </div>
-          <div class="modal-body">	
-            <input type="text" hidden name="class_id" id="class_id" class="form-control" required>
-
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" name='name' id='name' value="{{$student_classes->id}}" class="form-control" required>
-            </div>
-                  
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-            <input type="submit"  class="btn btn-info" value="Save">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
 </td>
 
@@ -181,17 +167,6 @@
           
           
 
-
-
-
-
-        
-
-
-
-
-    
-
         </div>
         <!-- /.row -->
 
@@ -201,43 +176,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <!-- /.content-wrapper -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection

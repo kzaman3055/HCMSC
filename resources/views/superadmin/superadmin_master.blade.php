@@ -86,19 +86,19 @@
 
 
 
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 
-
+{{-- 
   <script type="text/javascript">
     $(function(){
 
 $(document).on('click','#delete',function(e){
 
 e.preventDefault();
-var link = $(this).attr("href");
+var link = $(this).attr("href"); --}}
 
 
-
+{{-- 
 
 Swal.fire({
   title: 'Are you sure?',
@@ -146,7 +146,7 @@ Swal.fire({
    
  }
  @endif 
-  </script>
+  </script> --}}
 
 
 </body>

@@ -60,7 +60,7 @@ $route = Route::current()->getName();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('class.view')}}"><i class="ti-more"></i>View Class</a></li>
+            <li><a href="{{URL::To('class/manage-class')}}"><i class="ti-more"></i>View Class</a></li>
             <li><a href="calendar.html"><i class="ti-more"></i>Result</a></li>
           </ul>
         </li> 
