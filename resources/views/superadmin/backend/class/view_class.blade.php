@@ -114,14 +114,51 @@
 
 
 
-                                <a value="{{$student_classes->id}}" class="edit edit_class" id='edit_class' data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#editClassModal" class="edit edit_class" vid='{{$student_classes->id}}' data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 
 
                           
 
 
                             </td>
-                          </tr>
+
+
+
+<td>
+
+  <div id="editClassModal" vid="{{$student_classes->id}}" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="{{route('class_update')}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PUT')
+          <div class="modal-header">						
+            <h4 class="modal-title">Edit Class</h4>
+          </div>
+          <div class="modal-body">	
+            <input type="text" hidden name="class_id" id="class_id" class="form-control" required>
+
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name='name' id='name' value="{{$student_classes->id}}" class="form-control" required>
+            </div>
+                  
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+            <input type="submit"  class="btn btn-info" value="Save">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</td>
+
+
+</tr>
+
+
                           @endforeach
 
                  
@@ -171,32 +208,7 @@
 
 {{-- modal pop up --}}
 
-    <div id="editClassModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form action="{{route('class_update')}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <div class="modal-header">						
-              <h4 class="modal-title">Edit Class</h4>
-            </div>
-            <div class="modal-body">	
-              <input type="text" hidden name="class_id" id="class_id" class="form-control" required>
-
-              <div class="form-group">
-                <label>Name</label>
-                <input type="text" name='name' id='name' class="form-control" required>
-              </div>
-                    
-            </div>
-            <div class="modal-footer">
-              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-              <input type="submit"  class="btn btn-info" value="Save">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+   
 
 
 
@@ -206,32 +218,7 @@
 {{-- modal script start --}}
 
 
-<script >
 
-$(document).ready(function() {
-            $(document).on('click', '.edit_class', function() {
-                var class_id = $(this).val();
-                $('#editClassModal').modal('show');
-                $.ajax({
-                    type: "GET",
-                    url: "{{ url('/classes/') }}/"+ class_id+"/edit",
-                    success: function (response) {
-                        $('#class_id').val(class_id);
-                  
-                        console.log(response);
-                    }
-                })
-            })
-        });
-
-
-
-
-
-
-
-
-</script>
 
 
 
