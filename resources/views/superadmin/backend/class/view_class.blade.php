@@ -101,12 +101,25 @@
                         <tbody>
                             @foreach ($alldata as $key => $student_classes)
 
-                          <tr>
+                          <tr id="tr_id">
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $student_classes->name }}</td>
                             <td>
-                                <a href="{{route('class.edit',$student_classes->id)}}" class="btn btn-info btn-flat mb-5">Edit</a>
-                                <a href="{{route('class.delete',$student_classes->id)}}" class="btn btn-danger btn-flat mb-5" id="delete">Delete</a>
+                                {{-- <a href="{{route('class.edit',$student_classes->id)}}" class="btn btn-info btn-flat mb-5">Edit</a>
+                                <a href="{{route('class.delete',$student_classes->id)}}" class="btn btn-danger btn-flat mb-5" id="delete">Delete</a> --}}
+
+
+
+
+
+
+
+                                <a value="{{$student_classes->id}}" class="edit edit_class" id='edit_class' data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+
+
+                          
+
+
                             </td>
                           </tr>
                           @endforeach
@@ -120,6 +133,7 @@
             </div>
             <!-- /.box -->
           </div> 
+          
           
 
 
@@ -139,6 +153,94 @@
       </section>
       <!-- /.content -->
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- modal pop up --}}
+
+    <div id="editClassModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="{{route('class_update')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="modal-header">						
+              <h4 class="modal-title">Edit Class</h4>
+            </div>
+            <div class="modal-body">	
+              <input type="text" hidden name="class_id" id="class_id" class="form-control" required>
+
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name='name' id='name' class="form-control" required>
+              </div>
+                    
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+              <input type="submit"  class="btn btn-info" value="Save">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+{{-- modal popup end --}}
+
+
+{{-- modal script start --}}
+
+
+<script >
+
+$(document).ready(function() {
+            $(document).on('click', '.edit_class', function() {
+                var class_id = $(this).val();
+                $('#editClassModal').modal('show');
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('/classes/') }}/"+ class_id+"/edit",
+                    success: function (response) {
+                        $('#class_id').val(class_id);
+                  
+                        console.log(response);
+                    }
+                })
+            })
+        });
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+{{-- modal script end --}}
+
+
+
 </div>
 <!-- /.content-wrapper -->
 
@@ -162,56 +264,3 @@
 
 
 @endsection
-
-@push('script')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script>
-
-$(document).ready(function () {
-
-$.ajaxSetup({
-    headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-});
-
-$('body').on('click', '#submit', function (event) {
-    event.preventDefault()
-    var id = $("#color_id").val();
-    var name = $("#name").val();
-   
-    $.ajax({
-      url: 'color/' + id,
-      type: "POST",
-      data: {
-        id: id,
-        name: name,
-      },
-      dataType: 'json',
-      success: function (data) {
-          
-          $('#companydata').trigger("reset");
-          $('#practice_modal').modal('hide');
-          window.location.reload(true);
-      }
-  });
-});
-
-$('body').on('click', '#editCompany', function (event) {
-
-    event.preventDefault();
-    var id = $(this).data('id');
-    console.log(id)
-    $.get('color/' + id + '/edit', function (data) {
-         $('#userCrudModal').html("Edit category");
-         $('#submit').val("Edit category");
-         $('#practice_modal').modal('show');
-         $('#color_id').val(data.data.id);
-         $('#name').val(data.data.name);
-     })
-});
-
-}); 
-</script>
-@endpush 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SuperAdmin\StudentClass;
+use Illuminate\Support\Facades\Redirect;
 
 
 class ClassController extends Controller
@@ -40,7 +41,7 @@ class ClassController extends Controller
      $notification = array(
          
         'message' => 'Class Imserted Successfully',
-        'alert-type' => 'success'
+        'alert-type' => 'successf'
     
     );
      
@@ -58,6 +59,50 @@ class ClassController extends Controller
             return view('superadmin.backend.class.view_class',compact('editData'));
     
         }
+
+/**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $class = StudentClass::find($id);
+        return response()->json([
+            'status' => 'success',
+            'class' => $class
+        ]);
+    }
+
+
+
+
+
+    public function update(Request $request)
+    {
+   
+        $class_id = $request->input('class_id');
+        $class = StudentClass::find($class_id);
+        $class->name = $request->input('name');
+     
+        $class->save();
+
+        return Redirect::route('class.view');
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
