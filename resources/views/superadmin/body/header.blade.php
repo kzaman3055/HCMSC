@@ -1,68 +1,155 @@
 
-  <header class="main-header">
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top pl-30">
-      <!-- Sidebar toggle button-->
-	  <div>
-		  <ul class="nav">
-			<li class="btn-group nav-item">
-				<a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu" role="button">
-					<i class="nav-link-icon mdi mdi-menu"></i>
-			    </a>
-			</li>
-			<li class="btn-group nav-item">
-				<a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
-					<i class="nav-link-icon mdi mdi-crop-free"></i>
-			    </a>
-			</li>			
-			<li class="btn-group nav-item d-none d-xl-inline-block">
-				<a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-					<i class="ti-check-box"></i>
-			    </a>
-			</li>
-			<li class="btn-group nav-item d-none d-xl-inline-block">
-				<a href="calendar.html" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-					<i class="ti-calendar"></i>
-			    </a>
-			</li>
-		  </ul>
-	  </div>
-		
-      <div class="navbar-custom-menu r-side">
-        <ul class="nav navbar-nav">
-		  <!-- full Screen -->
-	   		
-
-		  		  
 @php
 $user = DB::table('users')->where('id',Auth::user()->id)->first();
 
 @endphp
-	      <!-- User Account-->
-          <li class="dropdown user user-menu">	
-			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">	 <i style="color:black;" > <b> Hello, {{ Auth::user()->name }}.</b> </i>  
-				<img src="../images/avatar/1.jpg" alt="">
+
+<div class="navbar-custom">
+	<ul class="list-unstyled topbar-menu float-end mb-0">
+		<li class="dropdown notification-list d-lg-none">
+			<a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+				<i class="dripicons-search noti-icon"></i>
 			</a>
-			<ul class="dropdown-menu animated flipInX">
-			  <li class="user-body">
-				 <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
-				 <div class="dropdown-divider"></div>
-				 <a class="dropdown-item" href="{{route('superadmin.logout')}}"><i class="ti-lock text-muted mr-2"></i> Logout</a>
-			  </li>
-			</ul>
-          </li>	
-		
-			
-        </ul>
-      </div>
-    </nav>
-  </header>
+			<div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+				<form class="p-3">
+					<input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+				</form>
+			</div>
+		</li>
 
 
 
 
 
 
+		<li class="dropdown notification-list">
+			<a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+				<span class="account-user-avatar"> 
+					<img src="{{asset('../assets/images/users/avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
+				</span>
+				<span>
+					<span class="account-user-name">{{ Auth::user()->name }}</span>
 
+
+@if(Auth::user()->role=='super_admin')
+
+					<span class="account-position">Super Admin</span>
+
+@elseif(Auth::user()->role=='admin')
+
+
+<span class="account-position">Admin</span>
+
+
+
+@endif
+				</span>
+			</a>
+			<div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+				<!-- item-->
+				<div class=" dropdown-header noti-title">
+					<h6 class="text-overflow m-0">Welcome !</h6>
+				</div>
+
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<i class="mdi mdi-account-circle me-1"></i>
+					<span>My Account</span>
+				</a>
+
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<i class="mdi mdi-account-edit me-1"></i>
+					<span>Settings</span>
+				</a>
+
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<i class="mdi mdi-lifebuoy me-1"></i>
+					<span>Support</span>
+				</a>
+
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<i class="mdi mdi-lock-outline me-1"></i>
+					<span>Lock Screen</span>
+				</a>
+
+				<!-- item-->
+				<a href="{{ route('superadmin.logout') }}" class="dropdown-item notify-item">
+					<i class="mdi mdi-logout me-1"></i>
+					<span>Logout</span>
+				</a>
+			</div>
+		</li>
+
+	</ul>
+	<button class="button-menu-mobile open-left">
+		<i class="mdi mdi-menu"></i>
+	</button>
+	<div class="app-search dropdown d-none d-lg-block">
+		<form>
+			<div class="input-group">
+				<input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+				<span class="mdi mdi-magnify search-icon"></span>
+				<button class="input-group-text btn-primary" type="submit">Search</button>
+			</div>
+		</form>
+
+		<div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
+			<!-- item-->
+			<div class="dropdown-header noti-title">
+				<h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
+			</div>
+
+			<!-- item-->
+			<a href="javascript:void(0);" class="dropdown-item notify-item">
+				<i class="uil-notes font-16 me-1"></i>
+				<span>Analytics Report</span>
+			</a>
+
+			<!-- item-->
+			<a href="javascript:void(0);" class="dropdown-item notify-item">
+				<i class="uil-life-ring font-16 me-1"></i>
+				<span>How can I help you?</span>
+			</a>
+
+			<!-- item-->
+			<a href="javascript:void(0);" class="dropdown-item notify-item">
+				<i class="uil-cog font-16 me-1"></i>
+				<span>User profile settings</span>
+			</a>
+
+			<!-- item-->
+			<div class="dropdown-header noti-title">
+				<h6 class="text-overflow mb-2 text-uppercase">Users</h6>
+			</div>
+
+			<div class="notification-list">
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<div class="d-flex">
+						<img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+						<div class="w-100">
+							<h5 class="m-0 font-14">Erwin Brown</h5>
+							<span class="font-12 mb-0">UI Designer</span>
+						</div>
+					</div>
+				</a>
+
+				<!-- item-->
+				<a href="javascript:void(0);" class="dropdown-item notify-item">
+					<div class="d-flex">
+						<img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+						<div class="w-100">
+							<h5 class="m-0 font-14">Jacob Deo</h5>
+							<span class="font-12 mb-0">Developer</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 
