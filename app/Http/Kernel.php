@@ -66,6 +66,5 @@ class Kernel extends HttpKernel
         'Role' => \App\Http\Middleware\Role::class,
         'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
 
-
     ];
 }

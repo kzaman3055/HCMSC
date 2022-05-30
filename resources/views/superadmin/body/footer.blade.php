@@ -1,11 +1,16 @@
-<footer class="main-footer">
-    <div class="pull-right d-none d-sm-inline-block">
-        <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
-		
-		  <li class="nav-item">
-			<a class="nav-link" href="#">Dev Profile</a>
-		  </li>
-		</ul>
-    </div>
-	  &copy; 2022 <a href="#">HCMSC</a>. All Rights Reserved.
-  </footer>
+<footer class="footer">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<script>document.write(new Date().getFullYear())</script> © HCMSC
+			</div>
+			<div class="col-md-6">
+				<div class="text-md-end footer-links d-none d-md-block">
+					<a href="javascript: void(0);">About</a>
+					<a href="javascript: void(0);">Support</a>
+					<a href="javascript: void(0);">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

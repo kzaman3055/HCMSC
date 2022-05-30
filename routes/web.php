@@ -1,10 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
 
-use App\Http\Controllers\SuperAdmin\ClassController1;
 
 
 
@@ -13,7 +13,7 @@ use App\Http\Controllers\SuperAdmin\ClassController1;
 
 
 
-use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +25,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['middleware' => 'prevent-back-history'],function(){
+
+
+
+
 
 
 
@@ -60,30 +65,13 @@ Route::prefix('superadmin')->group(function(){
 });
 
 
+Route::prefix('Academic')->group(function(){
+   
+    Route::resource('manage-class', 'App\Http\Controllers\SuperAdmin\StudentClassController');
+    Route::resource('manage-session', 'App\Http\Controllers\SuperAdmin\SessionController');
 
-
-Route::prefix('class')->group(function(){
-    // Route::get('/view', [Class1Controller1::class, 'ClassView'])->name('class.view');
-    // Route::post('/store', [Class1Controller1::class, 'ClassStore'])->name('class.store');
-    // // Route::put('/class-update/{id}', [Class1Controller1::class, 'ClassUpdate'])->name('class-update');
-    // // Route::get('/delete/{id}', [Class1Controller1::class, 'ClassDelete'])->name('class.delete');
-
-    Route::resource('manage-class', 'App\Http\Controllers\ClassController');
 
 });
-
-
-
-// common route beteen Super admin and admin
-
-/// Student Registration Routes  
-
-
-
-
-
-
-
 
 
 
