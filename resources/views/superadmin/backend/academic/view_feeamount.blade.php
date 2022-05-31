@@ -9,12 +9,12 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="">Academic</a></li>
-                                        <li class="breadcrumb-item"><a href="{{URL::To('class/manage-class')}}">Manage Classes</a></li>
+                                        <li class="breadcrumb-item"><a href="{{URL::To('Academic/manage-fee-category')}}">Manage Fee Category</a></li>
                                         <li class="breadcrumb-item active">View</li>
                                     </ol>
                                 </div>
                                 
-                                <h4 class="page-title">Manage Classes</h4>
+                                <h4 class="page-title">Manage Fee Category</h4>
                             </div>
                         </div>
                     </div>     
@@ -43,13 +43,13 @@
 
 @if(!empty($editdata))
 
-    <h4 class="header-title">Edit Class</h4>
+    <h4 class="header-title">Edit Fee Category</h4>
 
 
 
 @else
 
-    <h4 class="header-title">Add Class</h4>
+    <h4 class="header-title">Add Fee Category</h4>
 
 
 @endif
@@ -59,14 +59,14 @@
           <div class="tab-content">
               <div class="tab-pane show active" id="horizontal-form-preview">
                     @if(empty($editdata))
-                    {!! Form::open(array('route' =>['manage-class.store'],'method'=>'POST')) !!}
+                    {!! Form::open(array('route' =>['manage-fee-category.store'],'method'=>'POST')) !!}
                   @else
-                    {{  Form::open(array('route' => ['manage-class.update',$editdata->id], 'method' => 'PUT', 'files' => true))  }}
+                    {{  Form::open(array('route' => ['manage-fee-category.update',$editdata->id], 'method' => 'PUT', 'files' => true))  }}
                   @endif
                       <div class="row mb-3">
-                          <label for="name" class="col-3 col-form-label">Class Name</label>
+                          <label for="name" class="col-3 col-form-label">Shift</label>
                           <div class="col-9">
-                              <input type="text" name="name" class="form-control" value="{{(!empty($editdata->name))?$editdata->name:''}}" placeholder="Class Name">
+                              <input type="text" name="name" class="form-control" value="{{(!empty($editdata->name))?$editdata->name:''}}" placeholder="Fee Category Name">
                           </div>
                       </div>
                   
@@ -96,7 +96,7 @@
       <div class="card">
           <div class="card-body">
 
-              <h4 class="header-title">Classes Data</h4>
+              <h4 class="header-title">Fee Category Data</h4>
           
 
               <div class="tab-content">
@@ -106,26 +106,26 @@
                               <thead>
                                   <tr>
                                     <th>SL#</th>
-                                    <th>Name</th>
+                                    <th>Fee Category Name</th>
                                       <th>Action</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                @foreach ($alldata as $key => $student_classes)
+                                @foreach ($alldata as $key => $fee_categories)
 
                                   <tr>
                                     <td>{{ $key + 1 }}</td>
 
-                                    <td>{{ $student_classes->name }}</td>
+                                    <td>{{ $fee_categories->name }}</td>
                                     <td class="table-action">
 
 
-                                        <form action="{{ route('manage-class.destroy',$student_classes->id) }}" method="POST">
+                                        <form action="{{ route('manage-fee-category.destroy',$fee_categories->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
 
 
-                                            <a href="{{route('manage-class.edit',$student_classes->id)}}" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
+                                            <a href="{{route('manage-shift.edit',$fee_categories->id)}}" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
 
 
 

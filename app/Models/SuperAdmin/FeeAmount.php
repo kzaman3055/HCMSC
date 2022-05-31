@@ -5,13 +5,7 @@ namespace App\Models\SuperAdmin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Session extends Model
+class FeeAmount extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'year'
-    ];
-
-
 }

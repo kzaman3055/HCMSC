@@ -30,27 +30,38 @@
           <li class="side-nav-item">
               <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                   <i class="uil-home-alt"></i>
-                  <span href="{{route('superadmin.home')}}"> Dashboards </span>
+                  <span onclick="window.location.href='{{route('superadmin.home')}}';"> Dashboards </span>
               </a>
            
           </li>
 
-          <li class="side-nav-title side-nav-item">Apps</li>
 
       
 
           <li class="side-nav-item">
-              <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+              <a data-bs-toggle="collapse" href="#sidebarAcademic" aria-expanded="false" aria-controls="sidebarAcademic" class="side-nav-link">
                   <i class="uil-graduation-hat"></i>
                   <span>Academic</span>
                   <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="sidebarEcommerce">
+              <div class="collapse" id="sidebarAcademic">
                   <ul class="side-nav-second-level">
                       <li>
                           <a href="{{URL::To('Academic/manage-class')}}">Manage Classes</a>
                       </li>
-                      
+
+                      <li>
+                        <a href="{{URL::To('Academic/manage-session')}}">Manage Sessions</a>
+                    </li>
+                    <li>
+                        <a href="{{URL::To('Academic/manage-group')}}">Manage Groups</a>
+                    </li>
+                    <li>
+                        <a href="{{URL::To('Academic/manage-shift')}}">Manage Shifts</a>
+                    </li>
+                    <li>
+                        <a href="{{URL::To('Academic/manage-fee-category')}}">Manage Fee Category</a>
+                    </li>
                   </ul>
               </div>
           </li>
@@ -58,17 +69,24 @@
           <li class="side-nav-item">
               <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
                   <i class="uil-envelope"></i>
-                  <span> Email </span>
+                  <span> Manage Profiles </span>
                   <span class="menu-arrow"></span>
               </a>
               <div class="collapse" id="sidebarEmail">
                   <ul class="side-nav-second-level">
                       <li>
-                          <a href="apps-email-inbox.html">Inbox</a>
+                          <a href="apps-email-inbox.html">Admin & Accounts</a>
                       </li>
                       <li>
-                          <a href="apps-email-read.html">Read Email</a>
+                          <a href="apps-email-read.html">Teachers</a>
                       </li>
+                      
+                      <li>
+                        <a href="apps-email-read.html">Students</a>
+                    </li>
+                    <li>
+                        <a href="apps-email-read.html">Office Staff</a>
+                    </li>
                   </ul>
               </div>
           </li>
