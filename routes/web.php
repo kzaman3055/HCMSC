@@ -54,7 +54,7 @@ Route::get('/teacher/home', [App\Http\Controllers\HomeController::class, 'teache
 
 
 
-// SuperAdmin management all route
+// SuperAdmin management all route start
 Route::prefix('superadmin')->group(function(){
     Route::get('/logout', [SuperAdminController::class, 'Logout'])->name('superadmin.logout');
 
@@ -65,13 +65,50 @@ Route::prefix('superadmin')->group(function(){
 });
 
 
+// Academic Route Start
+
+
+
 Route::prefix('Academic')->group(function(){
    
     Route::resource('manage-class', 'App\Http\Controllers\SuperAdmin\StudentClassController');
     Route::resource('manage-session', 'App\Http\Controllers\SuperAdmin\SessionController');
+    Route::resource('manage-group', 'App\Http\Controllers\SuperAdmin\GroupController');
+    Route::resource('manage-shift', 'App\Http\Controllers\SuperAdmin\ShiftController');
+    Route::resource('manage-fee-category', 'App\Http\Controllers\SuperAdmin\FeeCategoryController');
+
+
+
+    Route::resource('manage-fee-amount', 'App\Http\Controllers\SuperAdmin\FeeAmountController');
 
 
 });
+
+// Academic Route End
+
+
+
+
+
+
+
+
+
+// SuperAdmin management all route end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

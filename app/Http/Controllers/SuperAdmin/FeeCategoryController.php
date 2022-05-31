@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers\SuperAdmin;
 
-
-use DB;
-
-use App\Models\SuperAdmin\StudentClass;
-
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use DB;
+
+use App\Models\SuperAdmin\FeeCategory;
 
 
-
-
-
-class StudentClassController extends Controller
+class FeeCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,12 +20,10 @@ class StudentClassController extends Controller
     public function index()
     {
 
+        
+        $data['alldata'] = feecategory::all();
 
-        $data['alldata'] = studentclass::all();
-
-        return view('superadmin.backend.academic.view_class',$data);
-
-
+        return view('superadmin.backend.academic.view_feecategory',$data);
 
 
     }
@@ -61,7 +53,7 @@ class StudentClassController extends Controller
         
         ]);   
         
-        $data = new StudentClass();
+        $data = new FeeCategory();
         
         $data->name=$request->name;
         
@@ -70,7 +62,7 @@ class StudentClassController extends Controller
         
         $notification = array(
             
-           'message' => 'Class Imserted Successfully',
+           'message' => 'Fee Category Imserted Successfully',
            'alert-type' => 'success'
        
        );
@@ -99,12 +91,12 @@ class StudentClassController extends Controller
      */
     public function edit($id)
     {
-        $data['alldata'] = studentclass::all();
-        $data['editdata'] = studentclass::find($id);
+        $data['alldata'] = feecategory::all();
+        $data['editdata'] = feecategory::find($id);
 
 
 
-        return view('superadmin.backend.academic.view_class',$data);
+        return view('superadmin.backend.academic.view_feecategory',$data);
     }
 
     /**
@@ -116,24 +108,23 @@ class StudentClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = StudentClass::findOrFail($id);        
+        $data = FeeCategory::findOrFail($id);        
         $input = $request->all();
         $action = $data->update($input);
 
-        $alldata['alldata'] = studentclass::all();
+        $alldata['alldata'] = FeeCategory::all();
 
 
     
         $notification = array(
             
-            'message' => 'Class Updated Successfully',
+            'message' => 'Fee Category Updated Successfully',
             'alert-type' => 'success'
 
         );
 
 
-        return redirect()->route('manage-class.index')->with($notification);
-
+        return redirect()->route('manage-fee-category.index')->with($notification);
     }
 
     /**
@@ -144,16 +135,14 @@ class StudentClassController extends Controller
      */
     public function destroy($id)
     {
-        
-
-        $data = studentclass::findOrFail($id);
+        $data = feecategory::findOrFail($id);
         $action = $data->delete();
 
 
 
         $notification = array(
             
-            'message' => 'Class Deleted Successfully',
+            'message' => 'Fee Category Deleted Successfully',
             'alert-type' => 'success'
         
         );
@@ -161,6 +150,5 @@ class StudentClassController extends Controller
 
 
         return redirect()->back()->with($notification);
-
     }
 }

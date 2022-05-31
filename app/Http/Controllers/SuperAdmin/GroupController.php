@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers\SuperAdmin;
 
-
-use DB;
-
-use App\Models\SuperAdmin\StudentClass;
-
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use DB;
+
+use App\Models\SuperAdmin\Group;
 
 
-
-
-
-class StudentClassController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,11 +19,11 @@ class StudentClassController extends Controller
      */
     public function index()
     {
+        
 
+        $data['alldata'] = group::all();
 
-        $data['alldata'] = studentclass::all();
-
-        return view('superadmin.backend.academic.view_class',$data);
+        return view('superadmin.backend.academic.view_group',$data);
 
 
 
@@ -61,7 +55,7 @@ class StudentClassController extends Controller
         
         ]);   
         
-        $data = new StudentClass();
+        $data = new Group();
         
         $data->name=$request->name;
         
@@ -70,7 +64,7 @@ class StudentClassController extends Controller
         
         $notification = array(
             
-           'message' => 'Class Imserted Successfully',
+           'message' => 'Group Imserted Successfully',
            'alert-type' => 'success'
        
        );
@@ -99,13 +93,13 @@ class StudentClassController extends Controller
      */
     public function edit($id)
     {
-        $data['alldata'] = studentclass::all();
-        $data['editdata'] = studentclass::find($id);
+        $data['alldata'] = group::all();
+        $data['editdata'] = group::find($id);
 
 
 
-        return view('superadmin.backend.academic.view_class',$data);
-    }
+        return view('superadmin.backend.academic.view_group',$data);   
+     }
 
     /**
      * Update the specified resource in storage.
@@ -116,25 +110,23 @@ class StudentClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = StudentClass::findOrFail($id);        
+        $data = Group::findOrFail($id);        
         $input = $request->all();
         $action = $data->update($input);
 
-        $alldata['alldata'] = studentclass::all();
+        $alldata['alldata'] = group::all();
 
 
     
         $notification = array(
             
-            'message' => 'Class Updated Successfully',
+            'message' => 'Group Updated Successfully',
             'alert-type' => 'success'
 
         );
 
 
-        return redirect()->route('manage-class.index')->with($notification);
-
-    }
+        return redirect()->route('manage-group.index')->with($notification);    }
 
     /**
      * Remove the specified resource from storage.
@@ -144,9 +136,7 @@ class StudentClassController extends Controller
      */
     public function destroy($id)
     {
-        
-
-        $data = studentclass::findOrFail($id);
+        $data = group::findOrFail($id);
         $action = $data->delete();
 
 
@@ -160,7 +150,6 @@ class StudentClassController extends Controller
 
 
 
-        return redirect()->back()->with($notification);
-
-    }
+        return redirect()->back()->with($notification);  
+      }
 }
