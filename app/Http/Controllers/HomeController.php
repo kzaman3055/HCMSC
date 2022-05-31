@@ -32,7 +32,7 @@ class HomeController extends Controller
     }
     public function adminindex()
     {
-        return view('adminhome');
+        return view('admin.index');
     }
     public function teacherindex()
     {
