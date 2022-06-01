@@ -47,7 +47,7 @@
               <div class="collapse" id="sidebarAcademic">
                   <ul class="side-nav-second-level">
                       <li>
-                          <a href="#">New Registration</a>
+                          <a href="{{URL::To('Student/new-reg')}}">New Registration</a>
                       </li>
                   </ul>
               </div>
