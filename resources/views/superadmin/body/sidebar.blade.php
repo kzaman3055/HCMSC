@@ -66,30 +66,76 @@
               </div>
           </li>
 
+
+
+
           <li class="side-nav-item">
-              <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                  <i class="uil-envelope"></i>
-                  <span> Manage Profiles </span>
-                  <span class="menu-arrow"></span>
-              </a>
-              <div class="collapse" id="sidebarEmail">
-                  <ul class="side-nav-second-level">
-                      <li>
-                          <a href="apps-email-inbox.html">Admin & Accounts</a>
-                      </li>
-                      <li>
-                          <a href="apps-email-read.html">Teachers</a>
-                      </li>
-                      
-                      <li>
-                        <a href="apps-email-read.html">Students</a>
+            <a data-bs-toggle="collapse" href="#sidebarMultiLevelManageProfiles" aria-expanded="false" aria-controls="sidebarMultiLevelManageProfiles" class="side-nav-link">
+                <i class="uil-users-alt"></i>
+                <span> Manage Profiles </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarMultiLevelManageProfiles">
+                <ul class="side-nav-second-level">
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarAdminAccounts" aria-expanded="false" aria-controls="sidebarAdminAccounts">
+                            <span> Admin & Accounts </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarAdminAccounts">
+                            <ul class="side-nav-third-level">
+                                <li>
+                                    <a href="javascript: void(0);">Item 1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0);">Item 2</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <a href="apps-email-read.html">Office Staff</a>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarTeachers" aria-expanded="false" aria-controls="sidebarTeachers">
+                            <span> Teachers </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarTeachers">
+                            <ul class="side-nav-third-level">
+                                <li>
+                                    <a href="javascript: void(0);">Item 1</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
                     </li>
-                  </ul>
-              </div>
-          </li>
+
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarStudents" aria-expanded="false" aria-controls="sidebarStudents">
+                            <span> Students </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarStudents">
+                            <ul class="side-nav-third-level">
+                                <li>
+                                    <a href="{{URL::To('Student/new-reg')}}">New Registration</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
 
           <li class="side-nav-item">
               <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">

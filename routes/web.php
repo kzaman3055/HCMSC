@@ -87,9 +87,16 @@ Route::prefix('Academic')->group(function(){
 // Academic Route End
 
 
+//manage student start
+
+
+Route::prefix('Student')->group(function(){
+
+    Route::get('new-reg', 'App\Http\Controllers\SuperAdmin\StudentController@create')->name('new-reg');
 
 
 
+});
 
 
 
