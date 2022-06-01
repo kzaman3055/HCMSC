@@ -31,40 +31,22 @@
       <div class="card-body">
 
         <?php 
-        if(!empty($editdata)){
-          $btn = 'Update';
-        }else{
+       
           $btn = 'Add';
-          
-        }
+         
       ?>
 
-
-
-@if(!empty($editdata))
-
-    <h4 class="header-title">Edit Group</h4>
-
-
-
-@else
 
     <h4 class="header-title">Add Group</h4>
 
 
-@endif
-
-
-
           <div class="tab-content">
               <div class="tab-pane show active" id="horizontal-form-preview">
-                    @if(empty($editdata))
+                   
                     {!! Form::open(array('route' =>['manage-group.store'],'method'=>'POST')) !!}
-                  @else
-                    {{  Form::open(array('route' => ['manage-group.update',$editdata->id], 'method' => 'PUT', 'files' => true))  }}
-                  @endif
+                  
                       <div class="row mb-3">
-                          <label for="name" class="col-3 col-form-label">Group</label>
+                          <label for="name" class="col-3 col-form-label">Group Name</label>
                           <div class="col-9">
                               <input type="text" name="name" class="form-control" value="{{(!empty($editdata->name))?$editdata->name:''}}" placeholder="Group Name">
                           </div>
@@ -79,7 +61,6 @@
                       </div>
 
                   {!! Form::close() !!}
-
 
 
                 </div> <!-- end preview-->
@@ -98,7 +79,6 @@
 
               <h4 class="header-title">Group Data</h4>
           
-
               <div class="tab-content">
                   <div class="tab-pane show active" id="striped-rows-preview">
                       <div class="table-responsive-sm">
@@ -124,43 +104,48 @@
                                             @csrf
                                             @method('DELETE')
 
-
-                                            <a href="{{route('manage-group.edit',$groups->id)}}" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
-
-
-
+                                            <a href="#editModal{{$groups->id}}" data-bs-toggle="modal" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
 
 
                                             <button type="submit"  class="btn btn-outline-danger btn-rounded show-alert-delete-box " > <i title="Delete" class="mdi mdi-delete"></i></button>
 
-
-
-
-                                          
-
-
-
-
-
                                       
                                         </form>
 
+                    <!-- Start Modal for edit Other Receive Sub Type -->
+                      <div class="modal fade" id="editModal{{$groups->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Groups</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            {!! Form::open(array('route' =>['manage-group.update', $groups->id],'method'=>'PUT')) !!}
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                      <label for="name" class="col-3 col-form-label">Fee Category </label>
+                                      <input class="form-control" type="text" name="name" value="{{$groups->name}}" required="" autocomplete="off">
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              {{Form::submit('Update',array('class'=>'btn btn-success btn-sm', 'style'=>'width:15%'))}}
+                            </div>
+                            {!! Form::close() !!}
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Modal for edit Other Receive Sub Type -->
                                       
                                         </td>
                                   </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-                                  
+ 
 
                                 @endforeach
 

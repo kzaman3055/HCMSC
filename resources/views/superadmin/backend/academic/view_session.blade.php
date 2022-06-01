@@ -31,42 +31,22 @@
       <div class="card-body">
 
         <?php 
-        if(!empty($editdata)){
-          $btn = 'Update';
-        }else{
+        
           $btn = 'Add';
           
-        }
       ?>
-
-
-
-@if(!empty($editdata))
-
-    <h4 class="header-title">Edit Session</h4>
-
-
-
-@else
 
     <h4 class="header-title">Add Session</h4>
 
-
-@endif
-
-
-
           <div class="tab-content">
               <div class="tab-pane show active" id="horizontal-form-preview">
-                    @if(empty($editdata))
+                
                     {!! Form::open(array('route' =>['manage-session.store'],'method'=>'POST')) !!}
-                  @else
-                    {{  Form::open(array('route' => ['manage-session.update',$editdata->id], 'method' => 'PUT', 'files' => true))  }}
-                  @endif
+                
                       <div class="row mb-3">
                           <label for="year" class="col-3 col-form-label">Session Year</label>
                           <div class="col-9">
-                              <input type="text" name="year" class="form-control" value="{{(!empty($editdata->year))?$editdata->year:''}}" placeholder="Session Year">
+                              <input type="text" name="year" class="form-control" placeholder="Session Year">
                           </div>
                       </div>
                   
@@ -80,17 +60,12 @@
 
                   {!! Form::close() !!}
 
-
-
                 </div> <!-- end preview-->
-          
           
           </div> <!-- end tab-content-->
       </div>  <!-- end card-body -->
   </div>  <!-- end card -->
 </div>  <!-- end col -->
-
-
 
   <div class="col-xl-6">
       <div class="card">
@@ -124,43 +99,51 @@
                                             @csrf
                                             @method('DELETE')
 
+                                            <a href="#editModal{{$sessions->id}}" data-bs-toggle="modal" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
 
-                                            <a href="{{route('manage-session.edit',$sessions->id)}}" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a>
-
-
-
-
+                                            <!-- <a href="{{route('manage-session.edit',$sessions->id)}}" class="btn btn-outline-info btn-rounded"> <i title="Edit" class="mdi mdi-pencil"></i></a> -->
 
                                             <button type="submit"  class="btn btn-outline-danger btn-rounded show-alert-delete-box " > <i title="Delete" class="mdi mdi-delete"></i></button>
 
-
-
-
-                                          
-
-
-
-
-
                                       
                                         </form>
+
+
+                                        <!-- Start Modal for edit Other Receive Sub Type -->
+                      <div class="modal fade" id="editModal{{$sessions->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Session</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            {!! Form::open(array('route' =>['manage-session.update', $sessions->id],'method'=>'PUT')) !!}
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                      <label for="year" class="col-3 col-form-label">Session Name </label>
+                                      <input class="form-control" type="text" name="year" value="{{$sessions->year}}" required="" autocomplete="off">
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                              {{Form::submit('Update',array('class'=>'btn btn-success btn-sm', 'style'=>'width:15%'))}}
+                            </div>
+                            {!! Form::close() !!}
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Modal for edit Other Receive Sub Type -->
 
                                       
                                         </td>
                                   </tr>
 
-
-
-
-
-
-
-
-
-
-
-
-                                  
 
                                 @endforeach
 
