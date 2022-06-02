@@ -125,16 +125,11 @@
 
 
 
-                                          
-
-
-
-
-
+                  
                                       
                                         </form>
 
-                                        <!-- Start Modal for edit Other Receive Sub Type -->
+                       <!-- Start Modal for edit Other Receive Sub Type -->
                       <div class="modal fade" id="editModal{{$student_classes->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <!-- Modal content-->
