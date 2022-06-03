@@ -39,12 +39,17 @@
                                     <div class="tab-content">
                                         <div class="tab-pane show active" id="input-types-preview">
                                             <div class="row">
-                                                <div class="col-lg-6">
 
-                                                        <div class="mb-2">
-                                                            <label for="example-fileinput" class="form-label">Image</label>
-                                                            <input type="file" id="example-fileinput" class="form-control">
-                                                        </div>
+
+
+
+
+{{-- 1st colmun --}}
+
+
+                                                <div class="col-lg-3">
+
+                                                      
 
 
                                                         <div class="mb-2">
@@ -53,76 +58,117 @@
                                                         </div>
     
                                                         <div class="mb-2">
-                                                            <label for="simpleinput" class="form-label">Gerdian name</label>
-                                                            <input type="text" id="simpleinput" class="form-control">
-                                                        </div>
-
-                                                        <div class="mb-2">
-                                                            <label for="simpleinput" class="form-label">Gerdian NID Number</label>
-                                                            <input type="text" id="simpleinput" class="form-control">
-                                                        </div>
-
-                                                        <div class="mb-2">
-                                                            <label for="simpleinput" class="form-label">Mobile Number</label>
+                                                            <label for="simpleinput" class="form-label">Father's Name</label>
                                                             <input type="text" id="simpleinput" class="form-control">
                                                         </div>
 
 
 
+
                                                         <div class="mb-2">
-                                                            <label for="example-date" class="form-label">Date of Birth</label>
-                                                            <input class="form-control" id="example-date" type="date" name="date">
+                                                            <label for="simpleinput" class="form-label">Mother's Name</label>
+                                                            <input type="text" id="simpleinput" class="form-control">
                                                         </div>
 
 
+                                                    
+
+                                              
                                                         <div class="mb-2">
                                                             <label for="simpleinput" class="form-label">Birth Registration Number</label>
                                                             <input type="text" id="simpleinput" class="form-control">
                                                         </div>
 
 
-                                                        <div class="mb-2">
-                                                            <label for="example-select" class="form-label">Gender</label>
-                                                            <select class="form-select" id="example-select">
-                                                                <option>Select</option>
+                                                   
 
-                                                                <option>Male</option>
-                                                                <option>Female</option>
-                                                                <option>Non Binary</option>
-                                                              
-                                                            </select>
+
+<br>
+                                                        <h5 class="form-label">Present Address</h5>
+
+
+
+<br>
+
+
+
+                                                        
+
+                                                  
+                                                        <div class="mb-2">
+                                                            <label for="simpleinput" class="form-label">District</label>
+                                                            <input type="text" id="simpleinput" class="form-control">
                                                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                                                       
-
                                                       
-                                                      
-            
-                                                       
+
+
+                                                        <br>
+                                                        <h5 class="form-label">Permanent Address</h5>
+
+
+
+<br>
+
+
+
+                                                        
+
+                                                  
+                                                        <div class="mb-2">
+                                                            <label for="simpleinput" class="form-label">District</label>
+                                                            <input type="text" id="simpleinput" class="form-control">
+                                                        </div>                   
     
-                                                      
-        
-                                              
     
                                                      
             
                                                 </div> <!-- end col -->
+
+
+
+
+
+{{-- 2nd column --}}
+
+
+
+
+
+
     
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-3">
             
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="example-date" class="form-label">Date of Birth</label>
+                                                        <input class="form-control" id="example-date" type="date" name="date">
+                                                    </div>
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Father's Mobile Number</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Mother's Mobile Number</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+
+
                                                     <div class="mb-2">
                                                         <label for="example-select" class="form-label">Religion</label>
                                                         <select class="form-select" id="example-select">
@@ -140,17 +186,71 @@
                                                     </div>
 
 
-                                                    <div class="mb-2">
-                                                        <label for="example-select" class="form-label">Class</label>
-                                                        <select class="form-select" id="example-select">
-                                                            <option>Select</option>
+                                                 
 
-                                                            <option>Class One</option>
-                                                            <option>Class Two</option>
-                                                          
-                                                        </select>
+
+
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Thana</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
                                                     </div>
 
+
+
+
+
+
+
+
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+
+
+
+
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Thana</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+                                                   
+
+            
+                                                </div> <!-- end col -->
+
+
+
+
+
+
+                                                {{-- 3rd colmun --}}
+
+    
+                                                <div class="col-lg-3">
+            
 
 
 
@@ -164,6 +264,129 @@
                                                     
                                                         </select>
                                                     </div>
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Father's Profession</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Mother's Profession</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="example-select" class="form-label">Gender</label>
+                                                        <select class="form-select" id="example-select">
+                                                            <option>Select</option>
+
+                                                            <option>Male</option>
+                                                            <option>Female</option>
+                                                            <option>Non Binary</option>
+                                                          
+                                                        </select>
+                                                    </div>
+
+
+
+
+
+                                               
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+                                                
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Post office</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+                                                  
+
+
+
+
+
+
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+                                                
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Post office</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+                                                 
+    
+
+
+
+            
+                                                </div> <!-- end col -->
+
+
+
+
+{{-- 4th col --}}
+
+
+
+                                                <div class="col-lg-3">
+            
+
+
+                                                    <div class="mb-2">
+                                                        <label for="example-select" class="form-label">Class</label>
+                                                        <select class="form-select" id="example-select">
+                                                            <option>Select</option>
+
+                                                            <option>Class One</option>
+                                                            <option>Class Two</option>
+                                                          
+                                                        </select>
+                                                    </div>
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Father's Income</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Gurdian NID Number</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
 
 
 
@@ -185,43 +408,78 @@
                                                     
                                                         </select>
                                                     </div>
-    
-                                                        <div class="mb-2">
-                                                            <label for="example-email" class="form-label">Email</label>
-                                                            <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
-                                                        </div>
-    
+
+
+
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+                                               
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Post Code</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                    <br>
+                                                    <h5 class="form-label">&nbsp; </h5>
+
+
+
+<br>
+                                               
+
+
+
+                                                    <div class="mb-2">
+                                                        <label for="simpleinput" class="form-label">Post Code</label>
+                                                        <input type="text" id="simpleinput" class="form-control">
+                                                    </div>
+
+
+
+                                                        
+
 
                                                         <div class="mb-2">
-                                                            <label for="password" class="form-label">New Password</label>
-                                                            <div class="input-group input-group-merge">
-                                                                <input type="password" id="password" class="form-control" placeholder="Enter your password">
-                                                                <div class="input-group-text" data-password="false">
-                                                                    <span class="password-eye"></span>
-                                                                </div>
-                                                            </div>
+                                                            <label for="example-fileinput" class="form-label">Image</label>
+                                                            <input type="file" id="example-fileinput" class="form-control">
                                                         </div>
-
-
-
-                                                        <div class="mb-2">
-                                                            <label for="password" class="form-label">Confirm Password</label>
-                                                            <div class="input-group input-group-merge">
-                                                                <input type="password" id="password" class="form-control" placeholder="Enter your password">
-                                                                <div class="input-group-text" data-password="false">
-                                                                    <span class="password-eye"></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
 
             
                                                 </div> <!-- end col -->
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                
 
                                             </div>
                                             <!-- end row-->                      
