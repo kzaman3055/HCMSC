@@ -31,15 +31,22 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Input Types</h4>
+
+
+
+                        <?php
+                        $btn = 'Add';
+                        
+                        ?>
 
 
 
 
                         <div class="tab-content">
                             <div class="tab-pane show active" id="input-types-preview">
-
-                                {!! Form::open(array('route' =>['manage-class.store'],'method'=>'POST')) !!}
+                                <form method="post" action="{{route('manage-student.store')}}" enctype="multipart/form-data">
+                                    @csrf
+                                {{-- {!! Form::open(['route' => ['manage-student.store'], 'method' => 'POST']) !!} --}}
 
 
 
@@ -49,32 +56,38 @@
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Name</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Name <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="name" required="true" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="example-date" class="form-label">Date of Birth</label>
-                                            <input class="form-control" id="example-date" type="date" name="date">
+                                            <label for="example-date" class="form-label">Date of Birth <span
+                                                    class="text-danger">*</span> </label>
+                                            <input class="form-control" required="true" name="dob" type="date">
                                         </div>
                                     </div>
 
 
 
 
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
 
 
                                         <div class="mb-2">
-                                            <label for="example-select" class="form-label">Class</label>
-                                            <select class="form-select" id="example-select">
-                                                <option>Select</option>
+                                            <label for="example-select" class="form-label">Class <span
+                                                    class="text-danger">*</span> </label>
+                                            <select name="class" class="form-select" required="true">
+                                                <option value="" selected="" disabled="">Select Class</option>
 
-                                                <option>Class One</option>
-                                                <option>Class Two</option>
+
+                                                @foreach ($classData as $key => $classData)
+                                                    <option value="{{ $classData->name }}">{{ $classData->name }}
+                                                    </option>
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -86,15 +99,53 @@
 
 
 
-                                    <div class="col-lg-3">
+
+
+                                    <div class="col-lg-2">
+
 
                                         <div class="mb-2">
-                                            <label for="example-select" class="form-label">Session</label>
-                                            <select class="form-select" id="example-select">
-                                                <option>Select</option>
+                                            <label for="example-select" class="form-label">Group <span
+                                                    class="text-danger">*</span> </label>
+                                            <select name="group" class="form-select" required="true">
+                                                <option value="" selected="" disabled="">Select Class</option>
 
-                                                <option>2020-2021</option>
-                                                <option>2021-2022</option>
+
+                                                @foreach ($groupData as $key => $groupData)
+                                                    <option value="{{ $groupData->name }}">{{ $groupData->name }}
+                                                    </option>
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="col-lg-2">
+
+                                        <div class="mb-2">
+                                            <label for="example-select" class="form-label">Session <span
+                                                    class="text-danger">*</span> </label>
+                                            <select name="session" class="form-select" required="true">
+                                                <option value="" selected="" disabled="">Select Session</option>
+
+
+                                                @foreach ($sessionData as $key => $sessionData)
+                                                    <option value="{{ $sessionData->year }}">{{ $sessionData->year }}
+                                                    </option>
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -116,16 +167,18 @@
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Name</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Father's Name <span
+                                                class="text-danger">*</span></label>
+                                            <input type="text" name="f_name" required="true"  class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Mobile Number</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Father's Mobile Number<span
+                                                class="text-danger">*</span></label>
+                                            <input type="text" name="f_mobile_num" required="true" class="form-control">
                                         </div>
                                     </div>
 
@@ -138,7 +191,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Father's Profession</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="f_profession" class="form-control">
                                         </div>
 
 
@@ -152,7 +205,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Father's Income</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="f_income" class="form-control">
                                         </div>
                                     </div>
 
@@ -175,7 +228,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Mother's Name</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="m_name" class="form-control">
                                         </div>
                                     </div>
 
@@ -183,7 +236,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Mother's Mobile Number</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="m_mobile_num" class="form-control">
                                         </div>
                                     </div>
 
@@ -194,7 +247,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Mother's Profession</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="m_profession" class="form-control">
                                         </div>
 
 
@@ -209,8 +262,9 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Gurdian NID Number</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Gurdian NID Number <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="g_nid" class="form-control">
                                         </div>
 
 
@@ -230,7 +284,7 @@
                                 <div class="row my-2">
                                     <div class="col-lg-3">
 
-                                        <label>Gender</label>
+                                        <label>Gender <span class="text-danger">*</span> </label>
 
 
 
@@ -244,24 +298,21 @@
 
 
                                             <div class="form-check form-check-inline">
-                                               
+
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" id="customRadio3" name="customRadio1"
-                                                    class="form-check-input">
-                                                <label class="form-check-label" for="customRadio3">Male</label>
+                                                <input type="radio" value="Male" name="gender" class="form-check-input">
+                                                <label class="form-check-label">Male</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" id="customRadio4" name="customRadio1"
-                                                    class="form-check-input">
-                                                <label class="form-check-label" for="customRadio4">Female</label>
+                                                <input type="radio" value="Female" name="gender" class="form-check-input">
+                                                <label class="form-check-label">Female</label>
                                             </div>
 
 
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" id="customRadio4" name="customRadio1"
-                                                    class="form-check-input">
-                                                <label class="form-check-label" for="customRadio4">Other</label>
+                                                <input type="radio" value="Other" name="gender" class="form-check-input">
+                                                <label class="form-check-label">Other</label>
                                             </div>
 
 
@@ -282,16 +333,16 @@
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="example-select" class="form-label">Religion</label>
-                                            <select class="form-select" id="example-select">
-                                                <option>Select</option>
+                                            <label for="example-select" class="form-label">Religion <span
+                                                    class="text-danger">*</span> </label>
+                                            <select class="form-select" name="religion">
+                                                <option value="" selected="" disabled="">Select Religion</option>
 
-                                                <option>Islam</option>
-                                                <option>Hinduism</option>
-                                                <option>Buddhism</option>
-                                                <option>Christianity</option>
-                                                <option>Atheism</option>
-                                                <option>Other</option>
+                                                <option value="Islam">Islam</option>
+                                                <option value="Hinduism">Hinduism</option>
+                                                <option value="Buddhism">Buddhism</option>
+                                                <option value="Christianity">Christianity</option>
+                                                <option value="Other">Other</option>
 
 
                                             </select>
@@ -305,9 +356,9 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Birth Registration
-                                                Number</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Birth Registration Number <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="birth_reg_num" class="form-control">
                                         </div>
 
 
@@ -321,17 +372,17 @@
 
                                         <div class="mb-2">
                                             <label for="example-select" class="form-label">Blood Group</label>
-                                            <select class="form-select" id="example-select">
-                                                <option>Select Blood Group</option>
+                                            <select class="form-select" name="blood_group">
+                                                <option value="" selected="" disabled="">Select Blood Group</option>
 
-                                                <option>A positive (A+)</option>
-                                                <option>A negative (A-)</option>
-                                                <option>B positive (B+)</option>
-                                                <option>B negative (B-)</option>
-                                                <option>O positive (O+)</option>
-                                                <option>O negative (O-)</option>
-                                                <option>AB positive (AB+)</option>
-                                                <option>AB negative (AB-)</option>
+                                                <option value="A positive">A positive (A+)</option>
+                                                <option value="A negative">A negative (A-)</option>
+                                                <option value="B positive">B positive (B+)</option>
+                                                <option value="B negative">B negative (B-)</option>
+                                                <option value="O positive">O positive (O+)</option>
+                                                <option value="O negative">O negative (O-)</option>
+                                                <option value="AB positive">AB positive (AB+)</option>
+                                                <option value="AB negative">AB negative (AB-)</option>
 
                                             </select>
                                         </div>
@@ -348,7 +399,7 @@
                                 {{-- 5th row --}}
 
 
-                                <label>Present Address</label>
+                                <label>Present Address <span class="text-danger">*</span> </label>
 
 
                                 <div class="row my-2">
@@ -359,33 +410,19 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Address</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Address <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="present_address" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-2">
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">District</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">District <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="present_district" class="form-control">
                                         </div>
-                                    </div>
-
-
-
-
-                                    <div class="col-lg-2">
-
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Thana</label>
-                                            <input type="text" id="simpleinput" class="form-control">
-                                        </div>
-
-
-
-
                                     </div>
 
 
@@ -394,11 +431,29 @@
                                     <div class="col-lg-2">
 
 
+                                        <div class="mb-2">
+                                            <label for="simpleinput" class="form-label">Thana <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="present_thana" class="form-control">
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+
+                                    <div class="col-lg-2">
+
+
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Post office</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Post office <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="present_poffice" class="form-control">
                                         </div>
 
 
@@ -412,8 +467,9 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Post Code</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Post Code <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="present_pcode" class="form-control">
                                         </div>
 
                                     </div>
@@ -427,7 +483,7 @@
 
 
 
-                                <label>Permanent Address</label>
+                                <label>Permanent Address <span class="text-danger">*</span> </label>
 
 
 
@@ -443,8 +499,9 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Address</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <label for="simpleinput" class="form-label">Address <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" name="permanent_address" class="form-control">
                                         </div>
                                     </div>
 
@@ -452,7 +509,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">District</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="permanent_district" class="form-control">
                                         </div>
                                     </div>
 
@@ -464,7 +521,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Thana</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="permanent_thana" class="form-control">
                                         </div>
 
 
@@ -482,7 +539,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Post office</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="permanent_poffice" class="form-control">
                                         </div>
 
 
@@ -497,7 +554,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Post Code</label>
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" name="permanent_pcode" class="form-control">
                                         </div>
 
                                     </div>
@@ -561,23 +618,18 @@
 
 
                                         <div class="mb-3">
-                                            <label for="example-fileinput" class="form-label">Default file
-                                                input</label>
-                                            <input type="file" id="image" class="form-control">
+                                            <label for="example-fileinput" class="form-label">
+                                                Photo</label>
+                                            <input type="file" name="image" id="image"  class="form-control">
                                         </div>
 
 
 
                                         <div class="mb-3">
-                                            <img id="showimage"
-                                                src="{{ !empty($package->image) ? url('upload/package_images/' . $package->image) : url('upload/no_image.jpg') }}"
-                                                style="width: 100px; width: 100px; border: 1px solid #000000;">
+                                 
+                                            <img id="showimage" src="{{(!empty($user->image))? url('upload/user_images/'.$user->image): url('upload/no_image.jpg') }}"
+                                            style ="width: 100px; width: 100px; border: 1px solid #000000;">
                                         </div>
-
-
-
-
-
 
 
                                     </div>
@@ -612,11 +664,12 @@
 
 
 
+                                </form>
 
 
 
 
-
+                                {{-- {!! Form::close() !!} --}}
 
 
                                 <!-- end row-->
@@ -638,37 +691,21 @@
     </div>
 
     {{-- show selected image --}}
-
-
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#image').change(function(e) {
-                var reader = new FileReader();
+        $(document).ready (function(){ 
+            $('#image').change (function(e){
+            var reader = new FileReader();
                 reader.onload = function(e) {
                     $('#showimage').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(e.target.files['0']);
-
-            });
-
-        });
+    }
+    
+    reader.readAsDataURL(e.target.files['0']);
+    
+    });
+    
+    });
+    
+    
     </script>
+
 @endsection
-
-
-{{-- <div class="form-group">
-    <h5>Picture <span class="text-danger">*</span></h5>
-    <div class="controls">
-        <input type="file" name="image" class="form-control" id="image">
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="controls">
-
-    <img id="showimage" src="{{(!empty($package->image))? url('upload/package_images/'.$package->image): url('upload/no_image.jpg') }}"
-    style ="width: 100px; width: 100px; border: 1px solid #000000;">
-
-</div>
-</div> --}}

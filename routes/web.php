@@ -93,7 +93,7 @@ Route::prefix('Academic')->group(function(){
 Route::prefix('Student')->group(function(){
 
     Route::get('new-reg', 'App\Http\Controllers\SuperAdmin\StudentController@create')->name('new-reg');
-    Route::resource('manage-student', 'App\Http\Controllers\SuperAdmin\FeeAmountController');
+    Route::resource('manage-student', 'App\Http\Controllers\SuperAdmin\StudentController');
 
 
 
