@@ -14,7 +14,7 @@
                             <li class="breadcrumb-item"><a href="#">Students</a></li>
                             <li class="breadcrumb-item"><a href="#">New Registration</a></li>
 
-                            <li class="breadcrumb-item active">View</li>
+                            <li class="breadcrumb-item active">Add</li>
                         </ol>
                     </div>
 
@@ -59,6 +59,8 @@
                                             <label for="simpleinput" class="form-label">Name <span
                                                     class="text-danger">*</span> </label>
                                             <input type="text" name="name" required="true" class="form-control">
+                                            <input type="hidden" name="role" value='student' class="form-control">
+
                                         </div>
                                     </div>
 
@@ -228,7 +230,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Mother's Name</label>
-                                            <input type="text" name="m_name" class="form-control">
+                                            <input type="text" name="m_name" required="true" class="form-control">
                                         </div>
                                     </div>
 
@@ -236,7 +238,7 @@
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Mother's Mobile Number</label>
-                                            <input type="text" name="m_mobile_num" class="form-control">
+                                            <input type="text" name="m_mobile_num" required="true" class="form-control">
                                         </div>
                                     </div>
 
@@ -264,7 +266,7 @@
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Gurdian NID Number <span
                                                     class="text-danger">*</span> </label>
-                                            <input type="text" name="g_nid" class="form-control">
+                                            <input type="text" name="g_nid" required="true" class="form-control">
                                         </div>
 
 
@@ -301,17 +303,17 @@
 
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" value="Male" name="gender" class="form-check-input">
+                                                <input type="radio" value="Male" name="gender" required="true" class="form-check-input">
                                                 <label class="form-check-label">Male</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" value="Female" name="gender" class="form-check-input">
+                                                <input type="radio" value="Female" name="gender" required="true" class="form-check-input">
                                                 <label class="form-check-label">Female</label>
                                             </div>
 
 
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" value="Other" name="gender" class="form-check-input">
+                                                <input type="radio" value="Other" name="gender" required="true" class="form-check-input">
                                                 <label class="form-check-label">Other</label>
                                             </div>
 

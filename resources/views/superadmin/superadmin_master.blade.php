@@ -13,7 +13,23 @@
 
         <!-- third party css -->
         <link href="{{ asset('../assets/css/vendor/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css">
+   <!-- third party css -->
+        <link href="{{ asset('../assets/css/vendor/dataTables.bootstrap5.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('../assets/css/vendor/responsive.bootstrap5.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('../assets/css/vendor/buttons.bootstrap5.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('../assets/css/vendor/select.bootstrap5.css')}}" rel="stylesheet" type="text/css">
         <!-- third party css end -->
+
+
+
+
+
+
+   <!-- third party css end -->
+
+
+
+
 
         <!-- App css -->
         <link href="{{ asset('../assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
@@ -77,7 +93,24 @@
   <script src="{{ asset('../assets/js/vendor.min.js')}}"></script>
   <script src="{{ asset('../assets/js/app.min.js')}}"></script>
 
+
   <!-- third party js -->
+  <script src="{{ asset('../assets/js/vendor/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/dataTables.bootstrap5.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/dataTables.responsive.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/responsive.bootstrap5.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/dataTables.buttons.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/buttons.bootstrap5.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/buttons.html5.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/buttons.flash.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/buttons.print.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/dataTables.keyTable.min.js')}}"></script>
+  <script src="{{ asset('../assets/js/vendor/dataTables.select.min.js')}}"></script>
+  <!-- third party js ends -->
+
+
+
+
   <script src="{{ asset('../assets/js/vendor/apexcharts.min.js')}}"></script>
   <script src="{{ asset('../assets/js/vendor/jquery-jvectormap-1.2.2.min.js')}}"></script>
   <script src="{{ asset('../assets/js/vendor/jquery-jvectormap-world-mill-en.js')}}"></script>
