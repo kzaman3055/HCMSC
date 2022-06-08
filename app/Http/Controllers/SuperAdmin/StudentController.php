@@ -145,8 +145,42 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = User::findOrFail($id);        
+        $input = $request->all();
+        $action = $data->update($input);
+
+        $alldata['alldata'] = user::all();
+
+
+    
+        $notification = array(
+            
+            'message' => 'User Updated Successfully',
+            'alert-type' => 'success'
+
+        );
+
+
+        return redirect()->route('manage-student.index')->with($notification); 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -156,6 +190,21 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data =User::findOrFail($id);
+        $action = $data->delete();
+
+
+
+        $notification = array(
+            
+            'message' => 'Student Deleted Successfully',
+            'alert-type' => 'success'
+        
+        );
+
+
+
+        return redirect()->back()->with($notification);
+
     }
 }

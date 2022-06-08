@@ -18,6 +18,18 @@ class UsersSeeder extends Seeder
     {
         
 
+
+
+
+
+
+
+
+
+
+
+
+
         DB::table('users')->insert([
             'name' => 'Super Admin',
             'role'=>'super_admin',
@@ -40,6 +52,430 @@ class UsersSeeder extends Seeder
         ]);
 
 
+
+        DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);  DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role'=>'student',
+        ]);
 
         DB::table('student_classes')->insert([
             'name' => 'Class One',
