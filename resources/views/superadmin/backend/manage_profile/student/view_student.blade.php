@@ -87,38 +87,22 @@
 
 
 
-
-                                                    <form action="{{ route('manage-student.destroy', $students->id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-eye"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="{{route('manage-student.edit',$students->id)}}" class="action-icon"> <i title="Edit Data"
+                                                        class="mdi mdi-square-edit-outline"></i></a>
+                                                  
 
                                                         <a href="#editModal{{ $students->id }}" data-bs-toggle="modal"
-                                                            class=" btn btn-link"> <i title="Edit"
+                                                            class=" btn btn-link"> <i title="Edit Status"
                                                                 class="mdi mdi-pencil"></i></a>
 
 
-
+                                                                <form action="{{ route('manage-student.destroy', $students->id) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
 
                                                         <a type="submit" class="btn btn-link show-alert-delete-box ">
                                                             <i title="Delete" class="mdi mdi-delete"></i></a>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                                                     </form>

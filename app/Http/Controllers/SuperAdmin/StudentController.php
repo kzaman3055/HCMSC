@@ -133,7 +133,12 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['alldata'] = user::all();
+        $data['editdata'] = user::find($id);
+
+
+
+        return view('superadmin.backend.manage_profile.student.edit_student',$data); 
     }
 
     /**
