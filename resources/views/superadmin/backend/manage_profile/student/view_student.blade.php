@@ -88,37 +88,22 @@
 
 
 
+
+
                                                     <form action="{{ route('manage-student.destroy', $students->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
-
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-eye"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
+                                                        <a href="{{ route('manage-student.edit', $students->id) }}"
+                                                            class="action-icon"> <i title="Edit Data"
                                                                 class="mdi mdi-square-edit-outline"></i></a>
 
+
                                                         <a href="#editModal{{ $students->id }}" data-bs-toggle="modal"
-                                                            class=" btn btn-link"> <i title="Edit"
+                                                            class=" action-icon"> <i title="Edit Status"
                                                                 class="mdi mdi-pencil"></i></a>
-
-
-
-
-                                                        <a type="submit" class="btn btn-link show-alert-delete-box ">
+                                                        <a type="submit" class="action-icon show-alert-delete-box ">
                                                             <i title="Delete" class="mdi mdi-delete"></i></a>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                                                     </form>
@@ -126,45 +111,57 @@
 
 
 
-                                                    <div class="modal fade" id="editModal{{$students->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal fade" id="editModal{{ $students->id }}"
+                                                        data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered">
-                                                          <!-- Modal content-->
-                                                          <div class="modal-content">
-                                                            <div class="modal-header">
-                                                              <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Status</h4>
-                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                
-                                                            {!! Form::open(array('route' =>['manage-student.update', $students->id],'method'=>'PUT')) !!}
-                                                            <div class="modal-body">
-                                                              <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="input-group">
-                                                                      <label  class="col-3 col-form-label">Account Status </label>
-                                                                   
-                                                                      <select  name="status" class="form-select">
-
-                                                                        <option value="" selected="" disabled="">Select Status</option>
-                        
-                                                        
-                                                                        <option value="1" {{($students->status== "1" ?"selected":"")}} >Active</option>
-                                                                        <option value="0" {{($students->status== "0" ?"selected":"")}} >Deactive</option>
-                        
-                        
-                                                                    </select>
-                                                                    </div>
-
+                                                            <!-- Modal content-->
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title"><i
+                                                                            class="fa fa-edit"></i> Edit Status</h4>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                              </div>
+
+                                                                {!! Form::open(['route' => ['manage-student.update', $students->id], 'method' => 'PUT']) !!}
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="input-group">
+                                                                                <label class="col-3 col-form-label">Account
+                                                                                    Status </label>
+
+                                                                                <select name="status"
+                                                                                    class="form-select">
+
+                                                                                    <option value="" selected=""
+                                                                                        disabled="">Select Status</option>
+
+
+                                                                                    <option value="1"
+                                                                                        {{ $students->status == '1' ? 'selected' : '' }}>
+                                                                                        Active</option>
+                                                                                    <option value="0"
+                                                                                        {{ $students->status == '0' ? 'selected' : '' }}>
+                                                                                        Deactive</option>
+
+
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    {{ Form::submit('Update', ['class' => 'btn btn-success btn-sm', 'style' => 'width:15%']) }}
+                                                                </div>
+                                                                {!! Form::close() !!}
                                                             </div>
-                                                            <div class="modal-footer">
-                                                              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-                                                              {{Form::submit('Update',array('class'=>'btn btn-success btn-sm', 'style'=>'width:15%'))}}
-                                                            </div>
-                                                            {!! Form::close() !!}
-                                                          </div>
                                                         </div>
-                                                      </div>
+                                                    </div>
 
 
 
