@@ -44,10 +44,10 @@
 
                         <div class="tab-content">
                             <div class="tab-pane show active" id="input-types-preview">
-                                <form method="post" action="{{ route('manage-student.store') }}"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    {{-- {!! Form::open(['route' => ['manage-student.store'], 'method' => 'POST']) !!} --}}
+                                {{-- <form method="post" action="{{ route('manage-student.update',$editdata->id) }}" --}}
+                                    {{-- enctype="multipart/form-data"> --}}
+                                    {{-- @csrf --}}
+                                  {!! Form::open(['route' => ['manage-student.update',$editdata->id], 'method' => 'PUT', 'enctype'=>'multipart/form-data']) !!} 
 
 
 
@@ -86,7 +86,9 @@
                                                         class="text-danger">*</span> </label>
                                                 <select name="class" class="form-select" required="true">
                                                     <option value="" selected="" disabled="">Select Class</option>
-
+                                                    @foreach ($classData as $key => $student_classes)
+                                                    <option value= "{{ $student_classes->name }}"{{($editdata->class== "$student_classes->name" ?"selected":"")}}>{{ $student_classes->name }}</option>
+                                                    @endforeach
 
 
                                                 </select>
@@ -108,9 +110,11 @@
                                                 <label for="example-select" class="form-label">Group <span
                                                         class="text-danger">*</span> </label>
                                                 <select name="group" class="form-select" required="true">
-                                                    <option value="" selected="" disabled="">Select Class</option>
+                                                    <option value="" selected="" disabled="">Select Group</option>
 
-
+                                                    @foreach ($groupData as $key => $group)
+                                                    <option value= "{{ $group->name }}"{{($editdata->group== "$group->name" ?"selected":"")}}>{{ $group->name }}</option>
+                                                    @endforeach
 
 
                                                 </select>
@@ -138,7 +142,9 @@
                                                 <select name="session" class="form-select" required="true">
                                                     <option value="" selected="" disabled="">Select Session</option>
 
-
+                                                    @foreach ($sessionData as $key => $session)
+                                                    <option value= "{{ $session->year }}"{{($editdata->session== "$session->year" ?"selected":"")}}>{{ $session->year }}</option>
+                                                    @endforeach
 
 
                                                 </select>
@@ -345,11 +351,11 @@
                                                 <select class="form-select" name="religion">
                                                     <option value="" selected="" disabled="">Select Religion</option>
 
-                                                    <option value="Islam">Islam</option>
-                                                    <option value="Hinduism">Hinduism</option>
-                                                    <option value="Buddhism">Buddhism</option>
-                                                    <option value="Christianity">Christianity</option>
-                                                    <option value="Other">Other</option>
+                                                    <option value="Islam"  {{($editdata->religion== "Islam" ?"selected":"")}}>Islam</option>
+                                                    <option value="Hinduism" {{($editdata->religion== "Hinduism" ?"selected":"")}}>Hinduism</option>
+                                                    <option value="Buddhism" {{($editdata->religion== "Buddhism" ?"selected":"")}}>Buddhism</option>
+                                                    <option value="Christianity" {{($editdata->religion== "Christianity" ?"selected":"")}}>Christianity</option>
+                                                    <option value="Other" {{($editdata->religion== "Other" ?"selected":"")}}>Other</option>
 
 
                                                 </select>
@@ -382,14 +388,14 @@
                                                 <select class="form-select" name="blood_group">
                                                     <option value="" selected="" disabled="">Select Blood Group</option>
 
-                                                    <option value="A positive">A positive (A+)</option>
-                                                    <option value="A negative">A negative (A-)</option>
-                                                    <option value="B positive">B positive (B+)</option>
-                                                    <option value="B negative">B negative (B-)</option>
-                                                    <option value="O positive">O positive (O+)</option>
-                                                    <option value="O negative">O negative (O-)</option>
-                                                    <option value="AB positive">AB positive (AB+)</option>
-                                                    <option value="AB negative">AB negative (AB-)</option>
+                                                    <option value="A positive" {{($editdata->blood_group== "A positive" ?"selected":"")}}>A positive (A+)</option>
+                                                    <option value="A negative" {{($editdata->blood_group== "A negative" ?"selected":"")}}>A negative (A-)</option>
+                                                    <option value="B positive" {{($editdata->blood_group== "B positive" ?"selected":"")}}>B positive (B+)</option>
+                                                    <option value="B negative" {{($editdata->blood_group== "B negative" ?"selected":"")}}>B negative (B-)</option>
+                                                    <option value="O positive" {{($editdata->blood_group== "O positive" ?"selected":"")}}>O positive (O+)</option>
+                                                    <option value="O negative" {{($editdata->blood_group== "O negative" ?"selected":"")}}>O negative (O-)</option>
+                                                    <option value="AB positive" {{($editdata->blood_group== "AB positive" ?"selected":"")}}>AB positive (AB+)</option>
+                                                    <option value="AB negative" {{($editdata->blood_group== "AB negative" ?"selected":"")}}>AB negative (AB-)</option>
 
                                                 </select>
                                             </div>
@@ -665,19 +671,19 @@
 
                                     <div class="justify-content-end row">
                                         <div class="col-9">
-                                            <button type="submit" style="float: right" class="btn btn-info">Add</button>
+                                            <button type="submit" style="float: right" class="btn btn-info">Update</button>
 
                                         </div>
                                     </div>
 
 
 
-                                </form>
+                                {{-- </form> --}}
 
 
 
 
-                                {{-- {!! Form::close() !!} --}}
+                                {!! Form::close() !!} 
 
 
                                 <!-- end row-->

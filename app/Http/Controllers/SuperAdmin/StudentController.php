@@ -136,9 +136,21 @@ class StudentController extends Controller
         $data['alldata'] = user::all();
         $data['editdata'] = user::find($id);
 
+        $classData['classData'] = StudentClass::all();
+        $sessionData['sessionData'] = Session::all();
+        $groupData['groupData'] = Group::all();
 
 
-        return view('superadmin.backend.manage_profile.student.edit_student',$data); 
+
+
+  
+
+
+
+
+
+        return view('superadmin.backend.manage_profile.student.edit_student',$classData,$data)->with($groupData)->with($sessionData
+    ); 
     }
 
     /**
@@ -148,11 +160,23 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, $id)
     {
 
         $data = User::findOrFail($id);        
         $input = $request->all();
+        
+
+
+
+
+
+
+
+
+
+
         $action = $data->update($input);
 
         $alldata['alldata'] = user::all();
