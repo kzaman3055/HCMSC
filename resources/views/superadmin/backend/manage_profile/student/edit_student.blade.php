@@ -585,76 +585,7 @@
 
 
 
-                                    <div class="row">
-
-
-
-
-
-
-                                        <div class="col-lg-3">
-
-
-
-
-
-
-                                        </div>
-
-
-
-
-                                        <div class="col-lg-3">
-
-
-
-
-
-
-
-                                        </div>
-
-
-
-                                        <div class="col-lg-3">
-
-
-
-
-
-
-
-                                        </div>
-
-
-                                        <div class="col-lg-3">
-
-
-                                            <div class="mb-3">
-                                                <label for="example-fileinput" class="form-label">
-                                                    Photo</label>
-                                                <input type="file" name="image" id="image" class="form-control">
-                                            </div>
-
-
-
-                                            <div class="mb-3">
-
-                                                <img id="showimage"
-                                                    src="{{ !empty($editdata->image) ? url('upload/user_images/' . $editdata->image) : url('upload/no_image.jpg') }}"
-                                                    style="width: 100px; width: 100px; border: 1px solid #000000;">
-                                            </div>
-
-
-                                        </div>
-
-
-
-
-
-
-
-                                    </div>
+                          
 
 
 
@@ -704,19 +635,5 @@
 
     </div>
 
-    {{-- show selected image --}}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#image').change(function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#showimage').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(e.target.files['0']);
-
-            });
-
-        });
-    </script>
+   
 @endsection
