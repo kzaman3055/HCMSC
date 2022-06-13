@@ -49,6 +49,9 @@
                       <li>
                           <a href="{{URL::To('Student/new-reg')}}">New Registration</a>
                       </li>
+                      <li>
+                        <a href="{{URL::To('Student/manage-student')}}">View Student</a>
+                    </li>
                   </ul>
               </div>
           </li>

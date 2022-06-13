@@ -26,6 +26,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+
+    public function devProfile()
+    {
+        return view('superadmin.backend.manage_profile.dev.dev_profile');  
+    }
     public function superadminindex()
     {
         return view('superadmin.index');

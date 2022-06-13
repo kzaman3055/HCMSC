@@ -23,7 +23,8 @@ class StudentController extends Controller
     {
         $data['alldata'] = user::all()->where('role','student');
 
-        return view('superadmin.backend.manage_profile.student.view_student',$data);    }
+        return view('superadmin.backend.manage_profile.student.view_student',$data);  
+      }
 
     /**
      * Show the form for creating a new resource.

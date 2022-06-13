@@ -97,11 +97,15 @@
                                                         <a href="{{ route('manage-student.edit', $students->id) }}"
                                                             class="action-icon"> <i title="Edit Data"
                                                                 class="mdi mdi-square-edit-outline"></i></a>
+                                                                @if(Auth::user()->role=='super_admin')
 
 
                                                         <a href="#editModal{{ $students->id }}" data-bs-toggle="modal"
                                                             class=" action-icon"> <i title="Edit Status"
                                                                 class="mdi mdi-pencil"></i></a>
+
+
+                                                                @endif
                                                         <a type="submit" class="action-icon show-alert-delete-box ">
                                                             <i title="Delete" class="mdi mdi-delete"></i></a>
 

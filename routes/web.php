@@ -52,6 +52,7 @@ Route::get('/superadmin/home', [App\Http\Controllers\HomeController::class, 'sup
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminindex'])->name('admin.home')->middleware('Role');
 Route::get('/teacher/home', [App\Http\Controllers\HomeController::class, 'teacherindex'])->name('teacher.home')->middleware('Role');
 
+Route::get('/dev', [App\Http\Controllers\HomeController::class, 'devProfile'])->name('dev.profile');
 
 
 // SuperAdmin management all route start
