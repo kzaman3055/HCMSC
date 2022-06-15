@@ -6,7 +6,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="text-md-end footer-links d-none d-md-block">
-					<a href="javascript: void(0);">Dev Profile</a>
+					<a href="{{route('dev.profile')}}">Dev Profile</a>
 			
 				</div>
 			</div>

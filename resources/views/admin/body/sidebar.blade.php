@@ -30,7 +30,7 @@
           <li class="side-nav-item">
               <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                   <i class="uil-home-alt"></i>
-                  <span onclick="window.location.href='{{route('superadmin.home')}}';"> Dashboards </span>
+                  <span onclick="window.location.href='{{route('admin.home')}}';"> Dashboards </span>
               </a>
            
           </li>

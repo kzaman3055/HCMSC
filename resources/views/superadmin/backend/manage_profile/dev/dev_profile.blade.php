@@ -31,7 +31,7 @@
                 <img src="assets/images/users/polash.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
 
                 <h4 class="mb-0 mt-2">Kamruzzaman Polash</h4>
-                <p class="text-muted font-14">Software Engineer | Web Dveloper</p>
+                <p class="text-muted font-14">Software Engineer | Web Developer</p>
 
 
                 <div class="text-start mt-3">
@@ -73,7 +73,9 @@
                 <img src="assets/images/users/rony.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
 
                 <h4 class="mb-0 mt-2">Rifat Ahmed Rony</h4>
-                <p class="text-muted font-14">Professional Fuckboy</p>
+                <p class="text-muted font-14">Software Engineer | Web Developer
+
+</p>
 
          
 
