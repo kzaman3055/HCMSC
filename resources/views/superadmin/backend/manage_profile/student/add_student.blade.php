@@ -24,8 +24,6 @@
         </div>
         <!-- end page title -->
 
-{{-- test comment --}}
-
 
         <div class="row">
             <div class="col-12">
