@@ -101,7 +101,10 @@
                         <div class="collapse" id="sidebarTeachers">
                             <ul class="side-nav-third-level">
                                 <li>
-                                    <a href="{{URL::To('Teacher/new-join')}}">New Employee</a>
+                                    <a href="{{URL::To('teacher/new-join')}}">Add Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="{{URL::To('teacher/new-join')}}">View Teacher</a>
                                 </li>
                                
                             </ul>

@@ -44,10 +44,8 @@
 
                         <div class="tab-content">
                             <div class="tab-pane show active" id="input-types-preview">
-                               <form method="post" action="{{route('manage-student.store')}}" enctype="multipart/form-data"> 
+                               <form method="post" action="{{route('manage-teacher.store')}}" enctype="multipart/form-data"> 
                                     @csrf
-                                {{-- {!! Form::open(['route' => ['manage-student.store'], 'method' => 'POST']) !!} --}}
-
 
 
                                 {{-- 1st row --}}
@@ -67,6 +65,16 @@
                                     <div class="col-lg-3">
 
                                         <div class="mb-2">
+                                    
+                                            <label for="simpleinput" class="form-label">NID Number/ Birth Reg No.<span
+                                                class="text-danger">*</span></label>
+                                            <input type="text" name="nid" required="true" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+
+                                        <div class="mb-2">
                                             <label for="example-date" class="form-label">Date of Birth <span
                                                     class="text-danger">*</span> </label>
                                             <input class="form-control" required="true" name="dob" type="date">
@@ -76,84 +84,16 @@
 
 
 
-                                    <div class="col-lg-2">
-
+                                    <div class="col-lg-3">
 
                                         <div class="mb-2">
-                                            <label for="example-select" class="form-label">Class <span
+                                            <label for="example-date" class="form-label">Joining Date <span
                                                     class="text-danger">*</span> </label>
-                                            <select name="class" class="form-select" required="true">
-                                                <option value="" selected="" disabled="">Select Class</option>
-
-
-                                                {{-- @foreach ($classData as $key => $classData)
-                                                    <option value="{{ $classData->name }}">{{ $classData->name }}
-                                                    </option>
-                                                @endforeach --}}
-
-                                            </select>
+                                            <input class="form-control" required="true" name="join_date" type="date">
                                         </div>
 
 
                                     </div>
-
-
-
-
-
-
-
-                                    <div class="col-lg-2">
-
-
-                                        <div class="mb-2">
-                                            <label for="example-select" class="form-label">Group <span
-                                                    class="text-danger">*</span> </label>
-                                            <select name="group" class="form-select" required="true">
-                                                <option value="" selected="" disabled="">Select Class</option>
-
-{{-- 
-                                                @foreach ($groupData as $key => $groupData)
-                                                    <option value="{{ $groupData->name }}">{{ $groupData->name }}
-                                                    </option>
-                                                @endforeach --}}
-
-                                            </select>
-                                        </div>
-
-
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <div class="col-lg-2">
-
-                                        <div class="mb-2">
-                                            <label for="example-select" class="form-label">Session <span
-                                                    class="text-danger">*</span> </label>
-                                            <select name="session" class="form-select" required="true">
-                                                <option value="" selected="" disabled="">Select Session</option>
-
-
-                                                {{-- @foreach ($sessionData as $key => $sessionData)
-                                                    <option value="{{ $sessionData->year }}">{{ $sessionData->year }}
-                                                    </option>
-                                                @endforeach --}}
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-
 
 
                                 </div>
@@ -163,137 +103,10 @@
 
                                 {{-- 2nd row --}}
 
-
-
-                                <div class="row">
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Name <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" name="f_name" required="true"  class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Mobile Number<span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" name="f_mobile_num" required="true" class="form-control">
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="col-lg-3">
-
-
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Profession</label>
-                                            <input type="text" name="f_profession" class="form-control">
-                                        </div>
-
-
-                                    </div>
-
-
-
-
-
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Father's Income</label>
-                                            <input type="text" name="f_income" class="form-control">
-                                        </div>
-                                    </div>
-
-
-
-
-                                </div>
-
-
-
-
-
-
-                                {{-- 3rd row --}}
-
-
-
-                                <div class="row ">
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Mother's Name</label>
-                                            <input type="text" name="m_name" required="true" class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Mother's Mobile Number</label>
-                                            <input type="text" name="m_mobile_num" required="true" class="form-control">
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="col-lg-3">
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Mother's Profession</label>
-                                            <input type="text" name="m_profession" class="form-control">
-                                        </div>
-
-
-
-                                    </div>
-
-
-
-
-
-                                    <div class="col-lg-3">
-
-
-                                        <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Gurdian NID Number <span
-                                                    class="text-danger">*</span> </label>
-                                            <input type="text" name="g_nid" required="true" class="form-control">
-                                        </div>
-
-
-                                    </div>
-
-
-
-
-                                </div>
-
-
-
-                                {{-- 4th row --}}
-
-
-
                                 <div class="row my-2">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
 
                                         <label>Gender <span class="text-danger">*</span> </label>
-
-
-
-
-
-
-
 
 
                                         <div class="mt-2">
@@ -321,18 +134,9 @@
                                         </div>
 
 
-
-
-
-
-
-
-
-
-
                                     </div>
 
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
 
                                         <div class="mb-2">
                                             <label for="example-select" class="form-label">Religion <span
@@ -358,17 +162,13 @@
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Birth Registration Number <span
+                                            <label for="simpleinput" class="form-label">Mobile Number <span
                                                     class="text-danger">*</span> </label>
-                                            <input type="text" name="birth_reg_num" class="form-control">
+                                            <input type="text" name="mobile" class="form-control">
                                         </div>
 
 
                                     </div>
-
-
-
-
 
                                     <div class="col-lg-3">
 
@@ -390,30 +190,76 @@
                                         </div>
                                     </div>
 
+                                </div>
 
+                                
+                                {{-- 3rd row --}}
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+
+                                        <div class="mb-2">
+                                            <label for="simpleinput" class="form-label">Father's Name <span
+                                                class="text-danger">*</span></label>
+                                            <input type="text" name="f_name" required="true"  class="form-control">
+                                        </div>
+                                    </div>
+
+                                
+
+                                    <div class="col-lg-3">
+
+
+
+                                        <div class="mb-2">
+                                            <label for="simpleinput" class="form-label">Father's Profession</label>
+                                            <input type="text" name="f_profession" class="form-control">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-lg-3">
+
+                                        <div class="mb-2">
+                                            <label for="simpleinput" class="form-label">Mother's Name</label>
+                                            <input type="text" name="m_name" required="true" class="form-control">
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-lg-3">
+
+                                        <div class="mb-2">
+                                            <label for="simpleinput" class="form-label">Mother's Profession</label>
+                                            <input type="text" name="m_profession" class="form-control">
+                                        </div>
+
+
+
+                                    </div>
 
 
                                 </div>
 
 
 
-
-                                {{-- 5th row --}}
+                                {{-- 4th row --}}
 
 
                                 <label>Present Address <span class="text-danger">*</span> </label>
 
-
                                 <div class="row my-2">
-
-
 
                                     <div class="col-lg-4">
 
-
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Address <span
-                                                    class="text-danger">*</span> </label>
+                                            <label for="simpleinput" class="form-label">House</label>
                                             <input type="text" name="present_address" class="form-control">
                                         </div>
                                     </div>
@@ -427,11 +273,7 @@
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="col-lg-2">
-
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Thana <span
@@ -439,18 +281,9 @@
                                             <input type="text" name="present_thana" class="form-control">
                                         </div>
 
-
-
-
                                     </div>
 
-
-
-
                                     <div class="col-lg-2">
-
-
-
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Post office <span
@@ -458,15 +291,9 @@
                                             <input type="text" name="present_poffice" class="form-control">
                                         </div>
 
-
                                     </div>
 
-
-
-
-
                                     <div class="col-lg-2">
-
 
                                         <div class="mb-2">
                                             <label for="simpleinput" class="form-label">Post Code <span
@@ -476,33 +303,19 @@
 
                                     </div>
 
-
-
                                 </div>
-
-
-
-
-
 
                                 <label>Permanent Address <span class="text-danger">*</span> </label>
 
-
-
-                                {{-- 6th row --}}
+                                {{-- 5th row --}}
 
 
                                 <div class="row my-2">
 
-
-
-
                                     <div class="col-lg-4">
 
-
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Address <span
-                                                    class="text-danger">*</span> </label>
+                                            <label for="simpleinput" class="form-label">House </label>
                                             <input type="text" name="permanent_address" class="form-control">
                                         </div>
                                     </div>
@@ -510,37 +323,27 @@
                                     <div class="col-lg-2">
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">District</label>
+                                            <label for="simpleinput" class="form-label">District <span
+                                                    class="text-danger">*</span>  </label>
                                             <input type="text" name="permanent_district" class="form-control">
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="col-lg-2">
 
-
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Thana</label>
+                                            <label for="simpleinput" class="form-label">Thana <span
+                                                    class="text-danger">*</span>  </label>
                                             <input type="text" name="permanent_thana" class="form-control">
                                         </div>
 
-
-
-
                                     </div>
-
-
-
 
                                     <div class="col-lg-2">
 
-
-
-
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Post office</label>
+                                            <label for="simpleinput" class="form-label">Post office  <span
+                                                    class="text-danger">*</span> </label>
                                             <input type="text" name="permanent_poffice" class="form-control">
                                         </div>
 
@@ -548,14 +351,12 @@
                                     </div>
 
 
-
-
-
                                     <div class="col-lg-2">
 
 
                                         <div class="mb-2">
-                                            <label for="simpleinput" class="form-label">Post Code</label>
+                                            <label for="simpleinput" class="form-label">Post Code <span
+                                                    class="text-danger">*</span> </label>
                                             <input type="text" name="permanent_pcode" class="form-control">
                                         </div>
 

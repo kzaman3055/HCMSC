@@ -100,10 +100,10 @@ Route::prefix('Student')->group(function(){
 
 });
 
-Route::prefix('Teacher')->group(function(){
+Route::prefix('teacher')->group(function(){
 
     Route::get('new-join', 'App\Http\Controllers\SuperAdmin\TeacherController@create')->name('new-join');
-
+    Route::resource('manage-teacher', 'App\Http\Controllers\SuperAdmin\TeacherController');
 
 
 });
