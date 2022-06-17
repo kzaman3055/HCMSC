@@ -18,34 +18,39 @@ return new class extends Migration
             $table->string('student_id')->uniqe()->nullable();
 
             $table->string('name')->nullable();
-            $table->string('group')->nullable();
+            $table->date('dob')->nullable();
             $table->string('class')->nullable();
-            $table->string('religion')->nullable();
-            $table->date('dob')->nullable();;
-            $table->string('birth_reg_num')->nullable();
+            $table->string('group')->nullable();
+            $table->string('session')->nullable();
+
             $table->string('f_name')->nullable();
             $table->string('f_mobile_num')->nullable();
             $table->string('f_profession')->nullable();
             $table->string('f_income')->nullable();
+
             $table->string('m_name')->nullable();
             $table->string('m_mobile_num')->nullable();
             $table->string('m_profession')->nullable();
             $table->string('g_nid')->nullable();
+
             $table->string('gender')->nullable();
-            $table->string('image', 2048)->nullable();
+            $table->string('religion')->nullable();
+            $table->string('birth_reg_num')->nullable();
+            $table->string('blood_group')->nullable();
+
             $table->string('present_address')->nullable();
             $table->string('present_district')->nullable();
             $table->string('present_thana')->nullable();
             $table->string('present_poffice')->nullable();
             $table->string('present_pcode')->nullable();
+
             $table->string('permanent_address')->nullable();
             $table->string('permanent_district')->nullable();
             $table->string('permanent_thana')->nullable();
             $table->string('permanent_poffice')->nullable();
             $table->string('permanent_pcode')->nullable();
 
-
-
+            $table->string('image', 2048)->nullable();
 
 
 

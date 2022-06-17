@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
 use App\Models\SuperAdmin\StudentClass;
+use App\Models\SuperAdmin\Student;
 
 use App\Models\SuperAdmin\Session;
 
@@ -21,7 +22,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $data['alldata'] = user::all()->where('role','student');
+        $data['alldata'] = Student::all();
 
         return view('superadmin.backend.manage_profile.student.view_student',$data);  
       }
@@ -52,7 +53,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         
-        $data = new User();
+        $data = new Student();
 
         $data->name=$request->name;
         $data->role=$request->role;
