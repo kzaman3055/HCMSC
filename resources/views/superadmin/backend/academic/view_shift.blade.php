@@ -69,7 +69,13 @@
                               <input type="text" name="name" class="form-control" value="{{(!empty($editdata->name))?$editdata->name:''}}" placeholder="Shift Name">
                           </div>
                       </div>
-                  
+                      
+                        <div class="row mb-3">
+                            <label for="name" class="col-3 col-form-label">Class</label>
+                            <div class="col-9">
+                                <input type="number" name="class" class="form-control" placeholder="Class">
+                            </div>
+                        </div>
                   
                       <div class="justify-content-end row">
                           <div class="col-9">
@@ -96,7 +102,8 @@
       <div class="card">
           <div class="card-body">
 
-              <h4 class="header-title">Shift Data</h4>
+              <h4 class="header-title">Shift Data                                   
+              </h4>
           
 
               <div class="tab-content">
@@ -107,6 +114,8 @@
                                   <tr>
                                     <th>SL#</th>
                                     <th>Shift Name</th>
+                                    <th>Year</th>
+                                    <th>id</th>
                                       <th>Action</th>
                                   </tr>
                               </thead>
@@ -115,8 +124,11 @@
 
                                   <tr>
                                     <td>{{ $key + 1 }}</td>
-
                                     <td>{{ $shifts->name }}</td>
+                                    <td>{{ $shifts->year }}</td>
+
+                                    <td>{{ $shifts->id_no }}</td>
+
                                     <td class="table-action">
 
 

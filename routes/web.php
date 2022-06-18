@@ -72,7 +72,6 @@ Route::prefix('superadmin')->group(function(){
 
 Route::prefix('Academic')->group(function(){
    
-    Route::resource('manage-class', 'App\Http\Controllers\SuperAdmin\StudentClassController');
     Route::resource('manage-session', 'App\Http\Controllers\SuperAdmin\SessionController');
     Route::resource('manage-group', 'App\Http\Controllers\SuperAdmin\GroupController');
     Route::resource('manage-shift', 'App\Http\Controllers\SuperAdmin\ShiftController');

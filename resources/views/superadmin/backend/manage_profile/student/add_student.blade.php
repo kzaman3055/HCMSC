@@ -57,7 +57,6 @@
                                             <label for="simpleinput" class="form-label">Name <span
                                                     class="text-danger">*</span> </label>
                                             <input type="text" name="name" required="true" class="form-control">
-                                            <input type="hidden" name="role" value='student' class="form-control">
 
                                         </div>
                                     </div>
@@ -82,13 +81,21 @@
                                                     class="text-danger">*</span> </label>
                                             <select name="class" class="form-select" required="true">
                                                 <option value="" selected="" disabled="">Select Class</option>
-
-
-                                                @foreach ($classData as $key => $classData)
-                                                    <option value="{{ $classData->name }}">{{ $classData->name }}
-                                                    </option>
-                                                @endforeach
-
+                                                <option value="Play">Play</option>
+                                                <option value="Nursery">Nursery</option>
+                                                <option value="KG">KG</option>
+                                                <option value="Class One">Class One</option>
+                                                <option value="Class Two">Class Two</option>
+                                                <option value="Class Three">Class Three</option>
+                                                <option value="Class Four">Class Four</option>
+                                                <option value="Class Five">Class Five</option>
+                                                <option value="Class Six">Class Six</option>
+                                                <option value="Class Seven">Class Seven</option>
+                                                <option value="Class Eight">Class Eight</option>
+                                                <option value="Class Nine">Class Nine</option>
+                                                <option value="Class Ten">Class Ten</option>
+                                                <option value="Class Eleven">Class Eleven</option>
+                                                <option value="Class Twelve">Class Twelve</option>
                                             </select>
                                         </div>
 

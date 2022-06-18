@@ -67,13 +67,36 @@
 
                                         <div class="mb-2">
                                     
-                                            <label for="simpleinput" class="form-label">NID Number/ Birth Reg No.<span
+                                            <label for="simpleinput" class="form-label">NID Number<span
                                                 class="text-danger">*</span></label>
                                             <input type="text" name="nid" required="true" class="form-control">
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3">
+
+                                    <div class="col-lg-2">
+
+
+                                        <div class="mb-2">
+                                            <label for="example-select" class="form-label">Depertment (should modified) <span
+                                                    class="text-danger">*</span> </label>
+                                            <select name="group" class="form-select" required="true">
+                                                <option value="" selected="" disabled="">Select Class</option>
+
+
+                                                @foreach ($groupData as $key => $groupData)
+                                                    <option value="{{ $groupData->name }}">{{ $groupData->name }}
+                                                    </option>
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="col-lg-2">
 
                                         <div class="mb-2">
                                             <label for="example-date" class="form-label">Date of Birth <span
@@ -85,7 +108,7 @@
 
 
 
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
 
                                         <div class="mb-2">
                                             <label for="example-date" class="form-label">Joining Date <span

@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('shifts', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('year')->nullable();
+$table->integer('id_no')->nullable();
+$table->integer('class')->nullable();
 
             $table->timestamps();
         });

@@ -8,6 +8,7 @@ use DB;
 use App\Models\User;
 use App\Models\SuperAdmin\StudentClass;
 use App\Models\SuperAdmin\Student;
+use Carbon\Carbon;
 
 use App\Models\SuperAdmin\Session;
 
@@ -54,13 +55,14 @@ class StudentController extends Controller
     {
         
         $data = new Student();
-
+        
         $data->name=$request->name;
-        $data->role=$request->role;
 
         $data->dob=$request->dob;
         $data->class=$request->class;
+        $data->admission_class=$request->class;
         $data->group=$request->group;
+        $data->addmission_year = Carbon::now()->format('Y');
 
         $data->session=$request->session;
         $data->f_name=$request->f_name;
@@ -100,6 +102,74 @@ class StudentController extends Controller
             $data['image']=$filename;
         
         }
+
+
+
+        //ID generate
+        $last = DB::table('students')->latest()->first();
+        $cnt = student::count();
+        $curr_year = Carbon::now()->format('Y');
+        $two_digit_year = (int)Carbon::now()->format('y');
+        $class_string =  $request->class;
+        $class = 0;
+
+        switch($request->class) {
+            case 'Class One':
+                $class=1;
+                break;
+            case 'Class Two':
+                $class=2;
+                break;
+            case 'Class Three':
+                $class=3;
+                break;
+            case 'Class Four':
+                $class=4;
+                break;
+            case 'Class Five':
+                $class=5;
+                break;
+            case 'Class Six':
+                $class=6;
+                break;
+            case 'Class Seven':
+                $class=7;
+                break;
+            case 'Class Eight':
+                $class=8;
+                break;
+            case 'Class Nine':
+                $class=9;
+                break;
+            case 'Class Ten':
+                $class=10;
+                break;
+            case 'Class Eleven':
+                $class=11;
+                break;
+            case 'Class Twelve':
+                $class=12;
+                break;
+            default:
+                $class=0;
+                break;
+        }
+
+        if($class<10) {
+            $two_digit_year = $two_digit_year*10;
+        }
+
+        $year_class = $two_digit_year.$class;
+        
+        if($cnt>0 && $last->addmission_year==$curr_year){
+            $last_digit = $last->student_id%1000+1;
+            $data->student_id = $year_class*10000+$last_digit;
+        } else {
+            $data->student_id = $year_class*10000+1;
+        }
+
+
+
    
         
         $data->save();
@@ -135,8 +205,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $data['alldata'] = user::all();
-        $data['editdata'] = user::find($id);
+        $data['alldata'] = Student::all();
+        $data['editdata'] = Student::find($id);
 
         $classData['classData'] = StudentClass::all();
         $sessionData['sessionData'] = Session::all();
@@ -166,7 +236,7 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = User::findOrFail($id);        
+        $data = Student::findOrFail($id);        
         $input = $request->all();
         
 
@@ -181,13 +251,13 @@ class StudentController extends Controller
 
         $action = $data->update($input);
 
-        $alldata['alldata'] = user::all();
+        $alldata['alldata'] = Student::all();
 
 
     
         $notification = array(
             
-            'message' => 'User Updated Successfully',
+            'message' => 'Student Updated Successfully',
             'alert-type' => 'success'
 
         );
@@ -221,7 +291,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $data =User::findOrFail($id);
+        $data =Student::findOrFail($id);
         $action = $data->delete();
 
 

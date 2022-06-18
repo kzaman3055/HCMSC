@@ -4,7 +4,8 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\SuperAdmin\Teacher;
+use App\Models\SuperAdmin\Group;
 
 class TeacherController extends Controller
 {
@@ -15,8 +16,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $data['alldata'] = Teacher::all();
+
+        return view('superadmin.backend.manage_profile.teacher.view_teacher',$data);      }
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +28,10 @@ class TeacherController extends Controller
     public function create()
     {
 
-        return view('superadmin.backend.manage_profile.teacher.add_teacher');
+        $groupData['groupData'] = Group::all();
+
+
+        return view('superadmin.backend.manage_profile.teacher.add_teacher',$groupData);
 
 
     }
@@ -39,7 +44,7 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new User();
+        $data = new Teacher();
         
         $data->name=$request->name;
         $data->role=$request->role;

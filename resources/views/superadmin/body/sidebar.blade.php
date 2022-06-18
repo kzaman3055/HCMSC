@@ -46,9 +46,7 @@
               </a>
               <div class="collapse" id="sidebarAcademic">
                   <ul class="side-nav-second-level">
-                      <li>
-                          <a href="{{URL::To('Academic/manage-class')}}">Manage Classes</a>
-                      </li>
+                  
 
                       <li>
                         <a href="{{URL::To('Academic/manage-session')}}">Manage Sessions</a>
@@ -104,7 +102,7 @@
                                     <a href="{{URL::To('teacher/new-join')}}">Add Teacher</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::To('teacher/new-join')}}">View Teacher</a>
+                                    <a href="{{URL::To('teacher/manage-teacher')}}">View Teacher</a>
                                 </li>
                                
                             </ul>
