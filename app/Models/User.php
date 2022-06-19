@@ -31,7 +31,7 @@ class User extends Authenticatable
 'status',
 'blood_group',
 'gender',
-
+'student_id',
         'f_name',
         'f_mobile_num',
 'f_profession',

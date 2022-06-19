@@ -86,10 +86,22 @@
                                                         class="text-danger">*</span> </label>
                                                 <select name="class" class="form-select" required="true">
                                                     <option value="" selected="" disabled="">Select Class</option>
-                                                    @foreach ($classData as $key => $student_classes)
-                                                    <option value= "{{ $student_classes->name }}"{{($editdata->class== "$student_classes->name" ?"selected":"")}}>{{ $student_classes->name }}</option>
-                                                    @endforeach
-
+                                                
+                                                    <option value="Play" {{($editdata->class== "Play" ?"selected":"")}}>Play</option>
+                                                    <option value="Nursery" {{($editdata->class== "Nursery" ?"selected":"")}}>Nursery</option>
+                                                    <option value="KG" {{($editdata->class== "KG" ?"selected":"")}}>KG</option>
+                                                    <option value="Class One" {{($editdata->class== "Class One" ?"selected":"")}}>Class One</option>
+                                                    <option value="Class Two" {{($editdata->class== "Class Two" ?"selected":"")}}>Class Two</option>
+                                                    <option value="Class Three" {{($editdata->class== "Class Three" ?"selected":"")}}>Class Three</option>
+                                                    <option value="Class Four" {{($editdata->class== "Class Four" ?"selected":"")}}>Class Four</option>
+                                                    <option value="Class Five" {{($editdata->class== "Class Five" ?"selected":"")}}>Class Five</option>
+                                                    <option value="Class Six" {{($editdata->class== "Class Six" ?"selected":"")}}>Class Six</option>
+                                                    <option value="Class Seven" {{($editdata->class== "Class Seven" ?"selected":"")}}>Class Seven</option>
+                                                    <option value="Class Eight" {{($editdata->class== "Class Eight" ?"selected":"")}}>Class Eight</option>
+                                                    <option value="Class Nine" {{($editdata->class== "Class Nine" ?"selected":"")}}>Class Nine</option>
+                                                    <option value="Class Ten" {{($editdata->class== "Class Ten" ?"selected":"")}}>Class Ten</option>
+                                                    <option value="Class Eleven" {{($editdata->class== "Class Eleven" ?"selected":"")}}>Class Eleven</option>
+                                                    <option value="Class Twelve" {{($editdata->class== "Class Twelve" ?"selected":"")}}>Class Twelve</option>
 
                                                 </select>
                                             </div>

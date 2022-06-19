@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
-use App\Models\SuperAdmin\StudentClass;
 use App\Models\SuperAdmin\Student;
 use Carbon\Carbon;
 
@@ -23,7 +22,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $data['alldata'] = Student::all();
+        // $data['alldata'] = Student::all();
+
+
+        $data['alldata'] = Student::join('users','students.student_id','=','users.student_id')->get(['students.*','users.status']);
 
         return view('superadmin.backend.manage_profile.student.view_student',$data);  
       }
@@ -36,12 +38,11 @@ class StudentController extends Controller
     public function create()
     {
 
-        $classData['classData'] = StudentClass::all();
         $sessionData['sessionData'] = Session::all();
         $groupData['groupData'] = Group::all();
 
 
-        return view('superadmin.backend.manage_profile.student.add_student',$classData,$sessionData)->with($groupData);
+        return view('superadmin.backend.manage_profile.student.add_student',$sessionData)->with($groupData);
 
     }
 
@@ -166,10 +167,13 @@ class StudentController extends Controller
             $data->student_id = $year_class*10000+$last_digit;
         } else {
             $data->student_id = $year_class*10000+1;
+         
         }
 
 
-
+        DB::table('users')->insert(
+            ['student_id' => $data->student_id]
+        );
    
         
         $data->save();
@@ -208,7 +212,6 @@ class StudentController extends Controller
         $data['alldata'] = Student::all();
         $data['editdata'] = Student::find($id);
 
-        $classData['classData'] = StudentClass::all();
         $sessionData['sessionData'] = Session::all();
         $groupData['groupData'] = Group::all();
 
@@ -221,7 +224,7 @@ class StudentController extends Controller
 
 
 
-        return view('superadmin.backend.manage_profile.student.edit_student',$classData,$data)->with($groupData)->with($sessionData
+        return view('superadmin.backend.manage_profile.student.edit_student',$data)->with($groupData)->with($sessionData
     ); 
     }
 
@@ -236,25 +239,13 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = Student::findOrFail($id);        
+        $data = Student::findOrFail($id);       
+
         $input = $request->all();
-        
-
-
-
-
-
-
-
-
-
-
         $action = $data->update($input);
-
         $alldata['alldata'] = Student::all();
 
 
-    
         $notification = array(
             
             'message' => 'Student Updated Successfully',
@@ -265,20 +256,6 @@ class StudentController extends Controller
 
         return redirect()->route('manage-student.index')->with($notification); 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

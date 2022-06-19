@@ -57,6 +57,7 @@ return new class extends Migration
             $table->string('image', 2048)->nullable();
 
 
+            $table->tinyInteger('status')->default(1)->comment('0=inactive,1=active')->default(0);
 
 
 

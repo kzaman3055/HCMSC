@@ -128,7 +128,9 @@
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
 
-                                                                {!! Form::open(['route' => ['manage-student.update', $students->id], 'method' => 'PUT']) !!}
+                                                                {!! Form::open(['route' => ['studentstatus.update', $students->student_id],'enctype'=>"multipart/form-data", 'method' => 'POST']) !!}
+                                                                @csrf
+
                                                                 <div class="modal-body">
                                                                     <div class="row">
                                                                         <div class="col-md-12">

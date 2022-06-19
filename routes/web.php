@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
 
 
+use App\Http\Controllers\SuperAdmin\StatusController;
 
 
 
@@ -98,6 +99,10 @@ Route::prefix('Student')->group(function(){
 
 
 });
+
+Route::post ('studentstatus/update/{id}', [StatusController::class, 'StudentStatus'])->name('studentstatus.update');
+
+
 
 Route::prefix('teacher')->group(function(){
 

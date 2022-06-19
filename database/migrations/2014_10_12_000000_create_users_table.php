@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('m_name')->nullable();
             $table->string('m_mobile_num')->nullable();
             $table->string('m_profession')->nullable();
+            $table->string('student_id')->uniqe()->nullable();
 
             $table->string('g_nid')->nullable();
 
