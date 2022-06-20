@@ -40,9 +40,8 @@
 
                                 <div class="text-start mt-3">
 
-                                    <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span
-                                            class="ms-2">Geneva
-                                            D. McKnight</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Father's Name :</strong> <span
+                                            class="ms-2">{{ $showdata->f_name }}</span></p>
 
                                     <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">(123)
                                             123 1234</span></p>
