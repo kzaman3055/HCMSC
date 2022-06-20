@@ -26,14 +26,14 @@ class StatusController extends Controller
   
         $notification = array(
         
-            'message' => 'Transport Data Updated Successfully',
+            'message' => 'Status Updated Successfully',
             'alert-type' => 'success'
         
         );
         
         
         
-        return redirect()->back()->with($data);
+        return redirect()->back()->with($data)->with($notification);
     
     
     }

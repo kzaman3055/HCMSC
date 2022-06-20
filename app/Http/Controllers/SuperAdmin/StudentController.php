@@ -198,7 +198,12 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+
+
+        $data['alldata'] = Student::all();
+        $data['showdata'] = Student::find($id);
+
+        return view('superadmin.backend.manage_profile.student.view_student_profile',$data);
     }
 
     /**
@@ -224,8 +229,7 @@ class StudentController extends Controller
 
 
 
-        return view('superadmin.backend.manage_profile.student.edit_student',$data)->with($groupData)->with($sessionData
-    ); 
+        return view('superadmin.backend.manage_profile.student.edit_student',$data)->with($groupData)->with($sessionData); 
     }
 
     /**

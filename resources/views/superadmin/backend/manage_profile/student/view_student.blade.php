@@ -37,11 +37,11 @@
                         <div class="tab-content">
                             <div class="tab-pane show active" id="basic-datatable-preview">
                                 <table id="basic-datatable" class="table dt-responsive nowrap w-100">
-                                    <thead>
+                                    <thead class="table-light">
                                         <tr>
                                             <th>Photo</th>
                                             <th>Name</th>
-
+                                            <th>Role No</th>
                                             <th>Date of Birth</th>
                                             <th>Class</th>
                                             <th>Group</th>
@@ -64,7 +64,8 @@
                                                         src="{{ !empty($students->image) ? url('upload/user_images/' . $students->image) : url('upload/no_image.jpg') }}"
                                                         style="width: 100px; width: 100px; border: 1px solid #000000;">
                                                 </td>
-                                                <td>{{ $students->name }}</td>
+                                                <td> <a href="{{ route('manage-student.show', $students->id) }}">{{ $students->name }} </a></td>
+                                                <td>{{ $students->student_id }}</td>
                                                 <td>{{ Carbon\Carbon::parse($students->dob)->format(' d-M-Y') }}
                                                 </td>
                                                 <td>{{ $students->class }}</td>
@@ -94,18 +95,18 @@
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
+
+                                                        <a href="{{ route('manage-student.show', $students->id) }}"
+                                                            class="action-icon"> <i class="mdi mdi-eye"></i></a>
+
                                                         <a href="{{ route('manage-student.edit', $students->id) }}"
                                                             class="action-icon"> <i title="Edit Data"
                                                                 class="mdi mdi-square-edit-outline"></i></a>
-                                                                @if(Auth::user()->role=='super_admin')
-
-
-                                                        <a href="#editModal{{ $students->id }}" data-bs-toggle="modal"
-                                                            class=" action-icon"> <i title="Edit Status"
-                                                                class="mdi mdi-pencil"></i></a>
-
-
-                                                                @endif
+                                                        @if (Auth::user()->role == 'super_admin')
+                                                            <a href="#editModal{{ $students->id }}"
+                                                                data-bs-toggle="modal" class=" action-icon"> <i
+                                                                    title="Edit Status" class="mdi mdi-pencil"></i></a>
+                                                        @endif
                                                         <a type="submit" class="action-icon show-alert-delete-box ">
                                                             <i title="Delete" class="mdi mdi-delete"></i></a>
 
@@ -122,13 +123,13 @@
                                                             <!-- Modal content-->
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h4 class="modal-title"><i
-                                                                            class="fa fa-edit"></i> Edit Status</h4>
+                                                                    <h4 class="modal-title"><i class="fa fa-edit"></i> Edit
+                                                                        Status</h4>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
 
-                                                                {!! Form::open(['route' => ['studentstatus.update', $students->student_id],'enctype'=>"multipart/form-data", 'method' => 'POST']) !!}
+                                                                {!! Form::open(['route' => ['studentstatus.update', $students->student_id], 'enctype' => 'multipart/form-data', 'method' => 'POST']) !!}
                                                                 @csrf
 
                                                                 <div class="modal-body">
@@ -138,11 +139,11 @@
                                                                                 <label class="col-3 col-form-label">Account
                                                                                     Status </label>
 
-                                                                                <select name="status"
-                                                                                    class="form-select">
+                                                                                <select name="status" class="form-select">
 
                                                                                     <option value="" selected=""
-                                                                                        disabled="">Select Status</option>
+                                                                                        disabled="">Select Status
+                                                                                    </option>
 
 
                                                                                     <option value="1"
