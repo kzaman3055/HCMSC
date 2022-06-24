@@ -30,8 +30,21 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Student Data </h4>
 
+                        <div class="row mb-2">
+                            
+                            <div class="col-sm-4">
+                                   <a href="{{URL::To('Student/new-reg')}}" class="btn btn-success btn-sm"> <i class="mdi mdi-plus-circle me-2"></i>Add Student</a>
+                            </div>
+
+
+
+
+
+                            
+                        
+                        </div>
+                    
 
 
                         <div class="tab-content">
@@ -41,7 +54,7 @@
                                         <tr>
                                             <th>Photo</th>
                                             <th>Name</th>
-                                            <th>Role No</th>
+                                            <th>Roll No</th>
                                             <th>Date of Birth</th>
                                             <th>Class</th>
                                             <th>Group</th>

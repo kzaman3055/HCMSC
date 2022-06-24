@@ -15,7 +15,6 @@ use App\Http\Controllers\SuperAdmin\StatusController;
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,6 +112,9 @@ Route::prefix('teacher')->group(function(){
 });
 
 
+Route::get('studentpasswordset/{id}', 'App\Http\Controllers\SuperAdmin\AssignPasswordController@PasswordAssignShow')->name('studentpass.set');
+
+Route::post('Setstudentpassword/{student_id}','App\Http\Controllers\SuperAdmin\AssignPasswordController@PasswordAssignStore')->name('studentpass.update');
 
 // SuperAdmin management all route end
 

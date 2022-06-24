@@ -33,8 +33,8 @@
                             alt="profile-image">
        
                         <h4 class="mb-0 mt-2"> {{ $showdata->name }}</h4>
-                        <p class="text-muted font-14"><strong>Rull No: </strong>{{ $showdata->student_id }}</p>
-
+                        <p class="text-muted font-14"><strong>Roll No: </strong>{{ $showdata->student_id }}</p>
+                        <a type="button" href="{{ route('studentpass.set', $showdata->student_id) }}" class="btn btn-success btn-sm mb-2">Assign Email & Password</a>
 
                             <div class="col">
 

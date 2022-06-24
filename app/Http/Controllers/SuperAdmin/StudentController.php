@@ -172,7 +172,7 @@ class StudentController extends Controller
 
 
         DB::table('users')->insert(
-            ['student_id' => $data->student_id]
+            ['student_id' => $data->student_id,'role'=>'student']
         );
    
         
@@ -184,11 +184,11 @@ class StudentController extends Controller
            'alert-type' => 'success'
        
        );
+       $sdata['alldata'] = Student::join('users','students.student_id','=','users.student_id')->get(['students.*','users.status']);
+
         
         
-        
-        return redirect()->back()->with($notification);
-    }
+       return view('superadmin.backend.manage_profile.student.view_student',$sdata);    }
 
     /**
      * Display the specified resource.
@@ -200,7 +200,7 @@ class StudentController extends Controller
     {
 
 
-        $data['alldata'] = Student::all();
+        // $data['alldata'] = Student::all();
         $data['showdata'] = Student::find($id);
 
         return view('superadmin.backend.manage_profile.student.view_student_profile',$data);
@@ -272,7 +272,13 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $data =Student::findOrFail($id);
+
+
+      $sid=       $data =Student::findOrFail($id);
+
+      DB::table('users')->where('student_id', $sid->student_id)->delete();
+
+      $data =Student::findOrFail($id);
         $action = $data->delete();
 
 
