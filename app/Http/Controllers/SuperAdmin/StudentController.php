@@ -89,7 +89,6 @@ class StudentController extends Controller
         $data->permanent_thana=$request->permanent_thana;
         $data->permanent_poffice=$request->permanent_poffice;
         $data->permanent_pcode=$request->permanent_pcode;
-        $data->blood_group=$request->blood_group;
 
 
         if($request->file('image')){
