@@ -115,7 +115,7 @@
                                             <label for="example-select" class="form-label">Group <span
                                                     class="text-danger">*</span> </label>
                                             <select name="group" class="form-select" required="true">
-                                                <option value="" selected="" disabled="">Select Class</option>
+                                                <option value="" selected="" disabled="">Select Group</option>
 
 
                                                 @foreach ($groupData as $key => $groupData)
